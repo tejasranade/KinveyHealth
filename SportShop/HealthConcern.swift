@@ -19,7 +19,7 @@ class HealthConcern: Entity {
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
-        return "Product"
+        return "healthconcern"
     }
     
     //Map properties in your backend collection to the members of this entity
