@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		65386FFFFBDDA88680FE95BD /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534590067973A884ECD595E0 /* Pods_KinveyHealthUITests.framework */; };
-		6A6617CD88E7EF1982EF0039 /* Pods_SportShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E22857A56285231DD20C7F /* Pods_SportShopUITests.framework */; };
-		79117EDBE3A62CF57CDF7796 /* Pods_KinveyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534E0D36AD17A49CB227615A /* Pods_KinveyHealth.framework */; };
-		9009AB8D7BEBBC1CA0C3D177 /* Pods_SportShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2045EC899E58CEDFF898E106 /* Pods_SportShopTests.framework */; };
+		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
+		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		9623091A1E42421700706E0E /* AdidasUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* AdidasUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
 		9674CF791E3D36D100666968 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674CF781E3D36D100666968 /* SignupController.swift */; };
@@ -41,8 +39,7 @@
 		96E445FD1E4047080050523A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FC1E4047080050523A /* Activity.swift */; };
 		96E445FF1E404D6B0050523A /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FE1E404D6B0050523A /* ActivityManager.swift */; };
 		96E4D9651E415E8800A7EF3C /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E4D9641E415E8800A7EF3C /* SettingsController.swift */; };
-		9A1743F5DA09D3C3E9FD8D55 /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E00371042C0435C5C1D932A /* Pods_KinveyHealthTests.framework */; };
-		D17243E2BE4E1F97762D0FA8 /* Pods_SportShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3F479BC2DCC4A19823E370 /* Pods_SportShop.framework */; };
+		F1E0EE2D8506C73BB07592BB /* Pods_KinveyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D70CC66745BD47B319B452A6 /* Pods_KinveyHealth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,18 +62,10 @@
 /* Begin PBXFileReference section */
 		10118930B3B9EF495ECF7E9B /* Pods-KinveyHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthTests/Pods-KinveyHealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		15A0F9BF306E76A6AAA0202F /* Pods-KinveyHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2045EC899E58CEDFF898E106 /* Pods_SportShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38FDD8AD675AD6E99710A1AE /* Pods-SportShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportShopUITests/Pods-SportShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3B3F479BC2DCC4A19823E370 /* Pods_SportShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		406D1359A9A1F2187CD8B31D /* Pods-SportShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportShopTests/Pods-SportShopTests.release.xcconfig"; sourceTree = "<group>"; };
-		40E22857A56285231DD20C7F /* Pods_SportShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		534590067973A884ECD595E0 /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		534E0D36AD17A49CB227615A /* Pods_KinveyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0C71CD93B983C55926AA36 /* Pods-SportShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportShop/Pods-SportShop.debug.xcconfig"; sourceTree = "<group>"; };
-		5E00371042C0435C5C1D932A /* Pods_KinveyHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
-		904FEA2A588E5D7CF9B503B4 /* Pods-SportShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportShopTests/Pods-SportShopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		962309191E42421700706E0E /* AdidasUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		9674CF781E3D36D100666968 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
@@ -113,9 +102,8 @@
 		96E445FC1E4047080050523A /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		96E445FE1E404D6B0050523A /* ActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
 		96E4D9641E415E8800A7EF3C /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		C4BAAA4F1D2B8FF12919554B /* Pods-SportShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportShopUITests/Pods-SportShopUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C684376236FFF78C5C3DDFC0 /* Pods-KinveyHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.debug.xcconfig"; sourceTree = "<group>"; };
-		DD3D04386EB119574E5A366A /* Pods-SportShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportShop/Pods-SportShop.release.xcconfig"; sourceTree = "<group>"; };
+		D70CC66745BD47B319B452A6 /* Pods_KinveyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F182AFCF968161558561DA63 /* Pods-KinveyHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthTests/Pods-KinveyHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,8 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D17243E2BE4E1F97762D0FA8 /* Pods_SportShop.framework in Frameworks */,
-				79117EDBE3A62CF57CDF7796 /* Pods_KinveyHealth.framework in Frameworks */,
+				F1E0EE2D8506C73BB07592BB /* Pods_KinveyHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9009AB8D7BEBBC1CA0C3D177 /* Pods_SportShopTests.framework in Frameworks */,
-				9A1743F5DA09D3C3E9FD8D55 /* Pods_KinveyHealthTests.framework in Frameworks */,
+				12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,8 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6617CD88E7EF1982EF0039 /* Pods_SportShopUITests.framework in Frameworks */,
-				65386FFFFBDDA88680FE95BD /* Pods_KinveyHealthUITests.framework in Frameworks */,
+				495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,12 +138,6 @@
 		64CBA186750D500C67D286E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5D0C71CD93B983C55926AA36 /* Pods-SportShop.debug.xcconfig */,
-				DD3D04386EB119574E5A366A /* Pods-SportShop.release.xcconfig */,
-				904FEA2A588E5D7CF9B503B4 /* Pods-SportShopTests.debug.xcconfig */,
-				406D1359A9A1F2187CD8B31D /* Pods-SportShopTests.release.xcconfig */,
-				38FDD8AD675AD6E99710A1AE /* Pods-SportShopUITests.debug.xcconfig */,
-				C4BAAA4F1D2B8FF12919554B /* Pods-SportShopUITests.release.xcconfig */,
 				C684376236FFF78C5C3DDFC0 /* Pods-KinveyHealth.debug.xcconfig */,
 				8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */,
 				F182AFCF968161558561DA63 /* Pods-KinveyHealthTests.debug.xcconfig */,
@@ -172,12 +151,9 @@
 		9422CA11E122562E567F1230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3B3F479BC2DCC4A19823E370 /* Pods_SportShop.framework */,
-				2045EC899E58CEDFF898E106 /* Pods_SportShopTests.framework */,
-				40E22857A56285231DD20C7F /* Pods_SportShopUITests.framework */,
-				534E0D36AD17A49CB227615A /* Pods_KinveyHealth.framework */,
-				5E00371042C0435C5C1D932A /* Pods_KinveyHealthTests.framework */,
-				534590067973A884ECD595E0 /* Pods_KinveyHealthUITests.framework */,
+				D70CC66745BD47B319B452A6 /* Pods_KinveyHealth.framework */,
+				2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */,
+				58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -545,7 +521,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8DD52F7D055E3F9782D86805 /* [CP] Check Pods Manifest.lock */ = {
@@ -560,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		ACAB295961840EDE68F7BE57 /* [CP] Check Pods Manifest.lock */ = {
@@ -575,7 +551,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D57B449AA285923E305A98C1 /* [CP] Embed Pods Frameworks */ = {
@@ -799,6 +775,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SportShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.KinveyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -818,6 +795,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SportShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.KinveyHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -64,7 +64,8 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //selectedSport = sportData[row]
         if let user = Kinvey.sharedClient.activeUser as? AdidasUser {
             user.sport = sportData[row]
-            user.save()
+            user.save() { user, error in
+            }
         }
     }
 }
