@@ -11,6 +11,7 @@
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		9623091A1E42421700706E0E /* AdidasUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* AdidasUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
+		9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA01EB917E800FCF5FD /* Doctor.swift */; };
 		9674CF791E3D36D100666968 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674CF781E3D36D100666968 /* SignupController.swift */; };
 		9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD991EB7B4AE00642E84 /* DocumentsController.swift */; };
 		9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */; };
@@ -68,6 +69,7 @@
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		962309191E42421700706E0E /* AdidasUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		9654FCA01EB917E800FCF5FD /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		9674CF781E3D36D100666968 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9691FD991EB7B4AE00642E84 /* DocumentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsController.swift; sourceTree = "<group>"; };
 		9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				9691FDA31EB8CC4500642E84 /* FindDoctorController.swift */,
 				9691FDA51EB8CC6000642E84 /* FindDoctorMapController.swift */,
+				9654FCA01EB917E800FCF5FD /* Doctor.swift */,
 			);
 			name = Doctors;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				9691FDAB1EB9068700642E84 /* DoctorCell.swift in Sources */,
 				9692A5801E398EA800EBEC23 /* LeftViewController.swift in Sources */,
 				96A6AB5B1E3F928D0093C051 /* Product.swift in Sources */,
+				9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */,
 				9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */,
 				9692A5861E39B04A00EBEC23 /* MenuItemCell.swift in Sources */,
 				9691FDA61EB8CC6000642E84 /* FindDoctorMapController.swift in Sources */,
