@@ -43,6 +43,7 @@ PODS:
   - Realm/Headers (2.6.2)
   - RealmSwift (2.6.2):
     - Realm (= 2.6.2)
+  - UIColor_Hex_Swift (3.0.2)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
   - XCGLogger/Core (4.0.0)
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - Haneke (~> 1.0)
   - Kinvey
   - Material (~> 2.0)
+  - UIColor_Hex_Swift (~> 3.0)
   - YouTubePlayer
 
 SPEC CHECKSUMS:
@@ -71,9 +73,10 @@ SPEC CHECKSUMS:
   PromiseKit: '08dfb783c161ddcd95b7912421f14c5113fd8318'
   Realm: 29222766425b9f831228f81b63f0e38a97a4d700
   RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
   YouTubePlayer: '028451f6772f372d4759866db99824c676ac1473'
 
-PODFILE CHECKSUM: 15413e1370e0922c56dcaf106f4d54238a602076
+PODFILE CHECKSUM: 1248b4f71d686036b54d5e85991cbb9e5b013fd0
 
 COCOAPODS: 1.2.1

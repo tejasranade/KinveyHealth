@@ -13,6 +13,7 @@ target 'KinveyHealth' do
   pod 'YouTubePlayer'
   pod 'Haneke', '~> 1.0'
   pod 'Charts'
+  pod 'UIColor_Hex_Swift', '~> 3.0'
 
   target 'KinveyHealthTests' do
     inherit! :search_paths
