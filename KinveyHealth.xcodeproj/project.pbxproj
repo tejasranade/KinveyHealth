@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
-		9623091A1E42421700706E0E /* AdidasUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* AdidasUser.swift */; };
+		9623091A1E42421700706E0E /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* HealthUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
+		962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */; };
 		9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA01EB917E800FCF5FD /* Doctor.swift */; };
 		9654FCA31EB91CD300FCF5FD /* HealthConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */; };
 		9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA41EB9252F00FCF5FD /* IDCard.swift */; };
@@ -70,8 +71,9 @@
 		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
-		962309191E42421700706E0E /* AdidasUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasUser.swift; sourceTree = "<group>"; };
+		962309191E42421700706E0E /* HealthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitHealthConcernController.swift; sourceTree = "<group>"; };
 		9654FCA01EB917E800FCF5FD /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcern.swift; sourceTree = "<group>"; };
 		9654FCA41EB9252F00FCF5FD /* IDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */,
+				962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */,
 			);
 			name = HealthConcern;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 				96E445FA1E403F1F0050523A /* NotificationController.swift */,
 				96E445FC1E4047080050523A /* Activity.swift */,
 				96E445FE1E404D6B0050523A /* ActivityManager.swift */,
-				962309191E42421700706E0E /* AdidasUser.swift */,
+				962309191E42421700706E0E /* HealthUser.swift */,
 			);
 			name = KinveyHealth;
 			path = SportShop;
@@ -623,6 +626,7 @@
 				9691FD9E1EB7CB3600642E84 /* DocumentDetailController.swift in Sources */,
 				96E445FB1E403F1F0050523A /* NotificationController.swift in Sources */,
 				9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */,
+				962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */,
 				9692A5821E39AEA900EBEC23 /* AccountViewController.swift in Sources */,
 				9691FDA11EB7DD0800642E84 /* IDController.swift in Sources */,
 				9691FDA91EB9060F00642E84 /* HealthTeamController.swift in Sources */,
@@ -644,7 +648,7 @@
 				9654FCA91EB92A9400FCF5FD /* Appointment.swift in Sources */,
 				9654FCA31EB91CD300FCF5FD /* HealthConcern.swift in Sources */,
 				96A6AB5F1E3FA3140093C051 /* ProductDetailController.swift in Sources */,
-				9623091A1E42421700706E0E /* AdidasUser.swift in Sources */,
+				9623091A1E42421700706E0E /* HealthUser.swift in Sources */,
 				96E445FD1E4047080050523A /* Activity.swift in Sources */,
 				96E4D9651E415E8800A7EF3C /* SettingsController.swift in Sources */,
 				96E445FF1E404D6B0050523A /* ActivityManager.swift in Sources */,

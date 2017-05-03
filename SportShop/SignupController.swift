@@ -30,8 +30,8 @@ class SignupController: UIViewController, UIPickerViewDelegate, UIPickerViewData
             let lastname = lastnameField.text,
             password.text == rePassword.text {
             
-            let user = AdidasUser()
-            user.sport = selectedSport
+            let user = HealthUser()
+            //user.sport = selectedSport
             user.firstname = name
             user.lastname = lastname
                 

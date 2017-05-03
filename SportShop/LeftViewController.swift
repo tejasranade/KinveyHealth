@@ -86,7 +86,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
             welcomeMsg.text = "Welcome, Guest!"
         }
         
-        if let user = Kinvey.sharedClient.activeUser as? AdidasUser,
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser,
             let src = user.imageSource {
             loadImage(src)
         } else {

@@ -35,7 +35,7 @@ class SupportViewController: UIViewController {
             reportBtn.setTitle("Report a Problem", for: .normal)
             problemText.isHidden = true
             
-            let user = Kinvey.sharedClient.activeUser as? AdidasUser
+            let user = Kinvey.sharedClient.activeUser as? HealthUser
             feedbackStore.save(Feedback(problemText.text, name: user?.firstname, email: user?.email), completionHandler: { (savedReport, error) in
                 //saved
                 self.showConfirmation()

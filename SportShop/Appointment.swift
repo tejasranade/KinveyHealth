@@ -13,6 +13,7 @@ import Realm
 
 class Appointment: Entity {
     var doctor: String?
+    var title: String?
     var apptDate: Date?
 
     override class func collectionName() -> String {
@@ -27,6 +28,7 @@ class Appointment: Entity {
         //Each property in your entity should be mapped using the following scheme:
         //<member variable> <- ("<backend property>", map["<backend property>"])
         doctor <- map["doctor"]
+        title <- map["title"]
         apptDate <- map["apptDate"]
     }
     

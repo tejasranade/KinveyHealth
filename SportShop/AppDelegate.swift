@@ -72,7 +72,7 @@ extension Client {
     }
     
     func realUserName() -> String? {
-        if let user = activeUser as? AdidasUser {
+        if let user = activeUser as? HealthUser {
             return user.firstname
         }
         return activeUser?.username

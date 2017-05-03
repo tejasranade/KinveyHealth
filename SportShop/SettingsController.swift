@@ -22,12 +22,12 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         picker.reloadAllComponents()
         
-        if let user = Kinvey.sharedClient.activeUser as? AdidasUser,
-            let sport = user.sport,
-            let index = sportData.index(of: sport) {
-            
-            picker.selectRow(index, inComponent: 0, animated: true)
-        }
+//        if let user = Kinvey.sharedClient.activeUser as? HealthUser,
+//            let sport = user.sport,
+//            let index = sportData.index(of: sport) {
+//            
+//            picker.selectRow(index, inComponent: 0, animated: true)
+//        }
     
     }
     @IBAction func dismiss(_ sender: Any) {
@@ -62,8 +62,8 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //selectedSport = sportData[row]
-        if let user = Kinvey.sharedClient.activeUser as? AdidasUser {
-            user.sport = sportData[row]
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+            //user.sport = sportData[row]
             user.save() { user, error in
             }
         }

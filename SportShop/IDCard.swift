@@ -17,10 +17,11 @@ class IDCard: Entity {
     dynamic var subscriberNo: String?
     dynamic var issueDate: String?
     dynamic var plan: String?
-    dynamic var officeCopay: String?
-    dynamic var prevCopay: String?
-    dynamic var emerCopay: String?
-    dynamic var urgentCopay: String?
+    dynamic var deductibleRemaining: String?
+//    dynamic var officeCopay: String?
+//    dynamic var prevCopay: String?
+//    dynamic var emerCopay: String?
+//    dynamic var urgentCopay: String?
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
@@ -33,17 +34,18 @@ class IDCard: Entity {
         super.propertyMapping(map)
         //Each property in your entity should be mapped using the following scheme:
         //<member variable> <- ("<backend property>", map["<backend property>"])
-        
-        groupName <- map["groupName"]
-        groupNo <- map["groupNo"]
+
         subscriberName <- map["subscriberName"]
         subscriberNo <- map["subscriberNo"]
+        groupName <- map["groupName"]
+        groupNo <- map["groupNo"]
         issueDate <- map["issueDate"]
         plan <- map["plan"]
-        officeCopay <- map["officeCopay"]
-        prevCopay <- map["prevCopay"]
-        emerCopay <- map["emerCopay"]
-        urgentCopay <- map["urgentCopay"]
+        deductibleRemaining <- map["deductibleRemaining"]
+//        officeCopay <- map["officeCopay"]
+//        prevCopay <- map["prevCopay"]
+//        emerCopay <- map["emerCopay"]
+//        urgentCopay <- map["urgentCopay"]
     }
     
 }
