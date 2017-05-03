@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initializeKinvey(){
-        Kinvey.sharedClient.initialize(appKey: "kid_S1x-gLXYe", appSecret: "6e10d63a1dc14fae817964c250971f93")
+        Kinvey.sharedClient.initialize(appKey: "kid_B1Vak6Ey-", appSecret: "aa9a2a42b7d741bba30bb94b599a5f0b")
         Kinvey.sharedClient.logNetworkEnabled = true
         //Kinvey.sharedClient.userType = AdidasUser.self
     }

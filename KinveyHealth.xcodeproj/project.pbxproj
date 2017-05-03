@@ -11,6 +11,10 @@
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		9623091A1E42421700706E0E /* AdidasUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* AdidasUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
+		9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA01EB917E800FCF5FD /* Doctor.swift */; };
+		9654FCA31EB91CD300FCF5FD /* HealthConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */; };
+		9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA41EB9252F00FCF5FD /* IDCard.swift */; };
+		9654FCA91EB92A9400FCF5FD /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA81EB92A9400FCF5FD /* Appointment.swift */; };
 		9674CF791E3D36D100666968 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674CF781E3D36D100666968 /* SignupController.swift */; };
 		9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD991EB7B4AE00642E84 /* DocumentsController.swift */; };
 		9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */; };
@@ -68,6 +72,10 @@
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		962309191E42421700706E0E /* AdidasUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		9654FCA01EB917E800FCF5FD /* Doctor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcern.swift; sourceTree = "<group>"; };
+		9654FCA41EB9252F00FCF5FD /* IDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
+		9654FCA81EB92A9400FCF5FD /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		9674CF781E3D36D100666968 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9691FD991EB7B4AE00642E84 /* DocumentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsController.swift; sourceTree = "<group>"; };
 		9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
@@ -166,6 +174,22 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
+		9654FCA61EB92A3300FCF5FD /* HealthConcern */ = {
+			isa = PBXGroup;
+			children = (
+				9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */,
+			);
+			name = HealthConcern;
+			sourceTree = "<group>";
+		};
+		9654FCA71EB92A8700FCF5FD /* Appointments */ = {
+			isa = PBXGroup;
+			children = (
+				9654FCA81EB92A9400FCF5FD /* Appointment.swift */,
+			);
+			name = Appointments;
+			sourceTree = "<group>";
+		};
 		9691FD981EB7B48B00642E84 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				9691FDA01EB7DD0800642E84 /* IDController.swift */,
+				9654FCA41EB9252F00FCF5FD /* IDCard.swift */,
 			);
 			name = IDCard;
 			sourceTree = "<group>";
@@ -189,6 +214,7 @@
 			children = (
 				9691FDA31EB8CC4500642E84 /* FindDoctorController.swift */,
 				9691FDA51EB8CC6000642E84 /* FindDoctorMapController.swift */,
+				9654FCA01EB917E800FCF5FD /* Doctor.swift */,
 			);
 			name = Doctors;
 			sourceTree = "<group>";
@@ -265,6 +291,8 @@
 		96B01EEB1E39237F00E2CFE1 /* KinveyHealth */ = {
 			isa = PBXGroup;
 			children = (
+				9654FCA71EB92A8700FCF5FD /* Appointments */,
+				9654FCA61EB92A3300FCF5FD /* HealthConcern */,
 				9691FDA71EB9060000642E84 /* HealthTeam */,
 				9691FDA21EB8CC3100642E84 /* Doctors */,
 				9691FD9F1EB7DCF500642E84 /* IDCard */,
@@ -601,8 +629,10 @@
 				9692A5921E3AE41D00EBEC23 /* SupportViewController.swift in Sources */,
 				96A6AB591E3EF54B0093C051 /* ProductsController.swift in Sources */,
 				9691FDAB1EB9068700642E84 /* DoctorCell.swift in Sources */,
+				9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */,
 				9692A5801E398EA800EBEC23 /* LeftViewController.swift in Sources */,
 				96A6AB5B1E3F928D0093C051 /* Product.swift in Sources */,
+				9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */,
 				9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */,
 				9692A5861E39B04A00EBEC23 /* MenuItemCell.swift in Sources */,
 				9691FDA61EB8CC6000642E84 /* FindDoctorMapController.swift in Sources */,
@@ -611,6 +641,8 @@
 				96A6AB5D1E3F993A0093C051 /* ProductCell.swift in Sources */,
 				96B01EED1E39237F00E2CFE1 /* AppDelegate.swift in Sources */,
 				9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */,
+				9654FCA91EB92A9400FCF5FD /* Appointment.swift in Sources */,
+				9654FCA31EB91CD300FCF5FD /* HealthConcern.swift in Sources */,
 				96A6AB5F1E3FA3140093C051 /* ProductDetailController.swift in Sources */,
 				9623091A1E42421700706E0E /* AdidasUser.swift in Sources */,
 				96E445FD1E4047080050523A /* Activity.swift in Sources */,
