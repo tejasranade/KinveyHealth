@@ -15,17 +15,17 @@ class FindDoctorTableViewController: UITableViewController {
     @IBOutlet weak var specialtyTextField: UITextField!
     @IBOutlet weak var specialtyLabel: UILabel!
     let specialtyPickerView = UIPickerView()
-    let specialtyOptions = ["Lungs", "Cardiology", "Neurology"]
+    let specialtyOptions = ["Family Medicine", "Lungs", "Cardiology", "Neurology"]
     
     @IBOutlet weak var languageTextField: UITextField!
     @IBOutlet weak var languageLabel: UILabel!
     let languagePickerView = UIPickerView()
-    let languageOptions = ["English", "Spanish", "Chinese", "Portuguese"]
+    let languageOptions = ["No Preference", "English", "Spanish", "Chinese", "Portuguese"]
     
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var genderLabel: UILabel!
     let genderPickerView = UIPickerView()
-    let genderOptions = ["Male", "Female"]
+    let genderOptions = ["No Preference", "Male", "Female"]
     
     @IBOutlet weak var acceptingNewPatientsSwitch: UISwitch!
     @IBOutlet weak var locationTextField: UITextField!

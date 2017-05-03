@@ -10,20 +10,20 @@ import Foundation
 import Kinvey
 import ObjectMapper
 
-class AdidasUser: User {
+class HealthUser: User {
 
-    var sport: String?
+    //var sport: String?
     var imageSource:String?
     var firstname: String?
     var lastname: String?
-    var salesCloudID: String?
+    //var salesCloudID: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        sport <- map["sport"]
+        //sport <- map["sport"]
         imageSource <- map["imageSource"]
         firstname <- map["firstname"]
         lastname <- map["lastname"]
-        salesCloudID <- map["salesCloudId"]
+        //salesCloudID <- map["salesCloudId"]
     }
 }

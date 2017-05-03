@@ -11,11 +11,11 @@ import Kinvey
 
 class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var products: [Product]?
+    var doctors: [Doctor]?
     @IBOutlet weak var tableView:UITableView!
     
-    lazy var productStore:DataStore<Product> = {
-        return DataStore<Product>.collection(.cache)
+    lazy var doctorStore:DataStore<Doctor> = {
+        return DataStore<Doctor>.collection(.cache)
     }()
     
     @IBAction func leftButtonTapped(_ sender: Any) {
@@ -28,10 +28,10 @@ class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDa
         
         //let query = Query(format: "category == %@", "shoes")
         
-        //productStore.find (query) { (items, error) in
-        productStore.find () { (items, error) in
+        //doctorStore.find (query) { (items, error) in
+        doctorStore.find () { (items, error) in
             if let items = items {
-                self.products = items
+                self.doctors = items
                 self.tableView.reloadData()
             } else {
                 print ("\(String(describing: error))")
@@ -44,21 +44,21 @@ class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products?.count ?? 0
+        return doctors?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DoctorCell", for: indexPath) as! ProductCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DoctorCell", for: indexPath) as! DoctorCell
         
-        cell.product = products?[indexPath.row]
+        cell.doctor = doctors?[indexPath.row]
         return cell
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? ProductDetailController,
+//        if let destination = segue.destination as? doctorDetailController,
 //            let indexPath = self.tableView.indexPathForSelectedRow {
-//            destination.product = products?[indexPath.row]
+//            destination.product = doctors?[indexPath.row]
 //        }
     }
 }
