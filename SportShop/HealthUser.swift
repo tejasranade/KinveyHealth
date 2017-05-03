@@ -16,14 +16,12 @@ class HealthUser: User {
     var imageSource:String?
     var firstname: String?
     var lastname: String?
-    //var salesCloudID: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
         //sport <- map["sport"]
         imageSource <- map["imageSource"]
-        firstname <- map["firstname"]
-        lastname <- map["lastname"]
-        //salesCloudID <- map["salesCloudId"]
+        firstname <- map["first_name"]
+        lastname <- map["last_name"]
     }
 }
