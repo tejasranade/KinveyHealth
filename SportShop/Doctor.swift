@@ -10,13 +10,15 @@ import Foundation
 import Kinvey
 import ObjectMapper
 import Realm
+import MapKit
 
 class Doctor: Entity {
+    
     dynamic var name: String?
     dynamic var aboutme: String?
     dynamic var companyName: String?
     dynamic var imageSource: String?
-    var location: GeoPoint?
+    dynamic var location: GeoPoint?
 
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
@@ -34,6 +36,26 @@ class Doctor: Entity {
         companyName <- map["CompanyName"]
         imageSource <- map["FullPhotoUrl"]
         location <- map["location"]
+    }
+    
+}
+
+extension Doctor: MKAnnotation {
+    
+    var coordinate: CLLocationCoordinate2D {
+        guard let location = location else {
+            return kCLLocationCoordinate2DInvalid
+        }
+        
+        return CLLocationCoordinate2D(geoPoint: location)
+    }
+    
+    var title: String? {
+        return name
+    }
+    
+    var subtitle: String? {
+        return companyName
     }
     
 }
