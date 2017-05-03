@@ -246,7 +246,7 @@
         <scene sceneID="knA-9u-SZY">
             <objects>
                 <tableViewController storyboardIdentifier="FindDoctorController" id="7AM-IV-vlh" customClass="FindDoctorTableViewController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="b8F-om-c3V">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="70" sectionHeaderHeight="18" sectionFooterHeight="18" id="b8F-om-c3V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -421,9 +421,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuP-cz-Upe">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuP-cz-Upe">
                                                     <rect key="frame" x="8" y="8" width="359" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.42745098039215684" green="0.50588235294117645" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="LOOK UP">
@@ -439,6 +438,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cuP-cz-Upe" secondAttribute="bottom" constant="8" id="W5s-cQ-2Sb"/>
+                                                <constraint firstItem="cuP-cz-Upe" firstAttribute="leading" secondItem="sqt-C1-i2Q" secondAttribute="leading" constant="8" id="cAo-fo-9LL"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuP-cz-Upe" secondAttribute="trailing" constant="8" id="vgy-Vh-YD0"/>
+                                                <constraint firstItem="cuP-cz-Upe" firstAttribute="top" secondItem="sqt-C1-i2Q" secondAttribute="top" constant="8" id="xeJ-en-Z6X"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
