@@ -10,6 +10,7 @@ import UIKit
 import Kinvey
 import Material
 import FBSDKCoreKit
+import UIColor_Hex_Swift
 
 extension UIStoryboard {
     class func viewController(identifier: String) -> UIViewController {
@@ -32,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        UINavigationBar.appearance().barTintColor = UIColor("#FF542D")
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        UINavigationBar.appearance().tintColor = UIColor("#652111")
 
         initializeKinvey()
 
@@ -72,4 +77,18 @@ extension Client {
         }
         return activeUser?.username
     }
+}
+
+extension UIView {
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
 }
