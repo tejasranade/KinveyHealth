@@ -13,7 +13,7 @@ import Realm
 
 class HealthConcern: Entity {
     var name: String?
-    var discomfort: Int?
+    var discomfort: String?
     var imageSource: String?
     var patientName: String?
     
@@ -30,7 +30,7 @@ class HealthConcern: Entity {
         //<member variable> <- ("<backend property>", map["<backend property>"])
         name <- map["healthconcern"]
         discomfort <- map["discomfort"]
-        imageSource <- map["concernPic"]
+        imageSource <- map["concernpic"]
         patientName <- map["patientName"]
     }
 }

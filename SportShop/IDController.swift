@@ -9,4 +9,11 @@
 import Foundation
 import UIKit
 
-class IDController: UIViewController {}
+class IDController: UIViewController {
+
+    @IBAction func leftButtonTapped(_ sender: Any) {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.drawerController?.toggleLeftView()
+    }
+
+}

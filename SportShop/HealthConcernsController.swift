@@ -11,7 +11,7 @@ import Kinvey
 
 class HealthConcernsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var doctors: [HealthConcern]?
+    var concerns: [HealthConcern]?
     @IBOutlet weak var tableView:UITableView!
     
     lazy var healthConcernStore:DataStore<HealthConcern> = {
@@ -31,7 +31,7 @@ class HealthConcernsController: UIViewController, UITableViewDelegate, UITableVi
         //healthConcernStore.find (query) { (items, error) in
         healthConcernStore.find () { (items, error) in
             if let items = items {
-                self.doctors = items
+                self.concerns = items
                 self.tableView.reloadData()
             } else {
                 print ("\(String(describing: error))")
@@ -44,13 +44,13 @@ class HealthConcernsController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doctors?.count ?? 0
+        return concerns?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HealthConcernCell", for: indexPath) as! HealthConcernCell
         
-        cell.doctor = doctors?[indexPath.row]
+        cell.healthConcern = concerns?[indexPath.row]
         return cell
         
     }

@@ -17,20 +17,32 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     
     @IBOutlet weak var descText: UITextField!
     
+    lazy var healthConcernStore:DataStore<HealthConcern> = {
+        return DataStore<HealthConcern>.collection(.cache)
+    }()
+
+    
     @IBAction func useCamera(_ sender: AnyObject) {
         
-        if UIImagePickerController.isSourceTypeAvailable(
-            UIImagePickerControllerSourceType.camera) {
-            
             let imagePicker = UIImagePickerController()
             
             imagePicker.delegate = self
             
             self.present(imagePicker, animated: true,
                          completion: nil)
+    }
+
+    @IBAction func submit(_ sender: AnyObject) {
+        let concern = HealthConcern()
+        concern.name = descText.text
+        healthConcernStore.save(concern) { item, error in
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
+    @IBAction func cancel(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         self.dismiss(animated: true, completion: nil)
