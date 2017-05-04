@@ -24,10 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var drawerController: AppNavigationDrawerController?
     
-    lazy var rootViewController: DashboardController = {
-        return UIStoryboard.viewController(identifier: "DashboardController") as! DashboardController
-    }()
-    
     lazy var leftViewController: LeftViewController = {
         return UIStoryboard.viewController(identifier: "LeftViewController") as! LeftViewController
     }()
@@ -46,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         window = UIWindow(frame: Screen.bounds)
+        let rootViewController = UIStoryboard.viewController(identifier: "DashboardController")
         drawerController = AppNavigationDrawerController(rootViewController: UINavigationController(rootViewController: rootViewController),
                                                          leftViewController: leftViewController)
         window!.rootViewController = drawerController
@@ -82,7 +79,8 @@ extension Client {
 
 extension UIView {
     
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable
+    var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
