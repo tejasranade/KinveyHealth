@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UlE-og-fVS" id="Fch-yJ-AK8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="MenuItemLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CY-OE-xqK">
@@ -665,7 +665,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TQy-Nf-Qia" id="0Li-Aq-WOy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cde-7A-afo">
@@ -1127,7 +1127,7 @@
                                         <rect key="frame" x="0.0" y="245" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p5O-Em-MCL" id="WRN-W3-2kP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Accepting New Patients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJo-og-ZaE">
@@ -1152,7 +1152,7 @@
                                         <rect key="frame" x="0.0" y="315" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3rc-nU-bJa" id="95T-MP-l1i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugn-MS-hms">
@@ -1195,14 +1195,14 @@
                                         <rect key="frame" x="0.0" y="421" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tnj-P0-93j" id="sqt-C1-i2Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuP-cz-Upe">
                                                     <rect key="frame" x="8" y="8" width="359" height="54"/>
                                                     <color key="backgroundColor" red="0.42745098039215684" green="0.50588235294117645" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="LOOK UP">
+                                                    <state key="normal" title="Search">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -1211,7 +1211,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <segue destination="AmR-I8-Sm7" kind="show" id="e2h-lK-RBS"/>
+                                                        <action selector="submit:" destination="7AM-IV-vlh" eventType="touchUpInside" id="MCQ-h8-Yu5"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1247,16 +1247,17 @@
                         <outlet property="locationTextField" destination="fx1-Ku-ORI" id="Ld1-vj-Rsf"/>
                         <outlet property="specialtyLabel" destination="gcl-QX-Obp" id="bru-ZR-eXZ"/>
                         <outlet property="specialtyTextField" destination="s6g-lf-m4e" id="znW-mf-wfC"/>
+                        <segue destination="AmR-I8-Sm7" kind="show" identifier="findDoctors" id="vXE-iO-2Qs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydD-Yp-Rfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512.79999999999995" y="-862.21889055472275"/>
         </scene>
-        <!--Find a Doctor-->
+        <!--Map Doctors-->
         <scene sceneID="irl-fL-nF8">
             <objects>
-                <viewController storyboardIdentifier="FindDoctorMapController" title="Find a Doctor" id="AmR-I8-Sm7" customClass="FindDoctorMapController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindDoctorMapController" title="Find a Doctor" id="AmR-I8-Sm7" userLabel="Map Doctors" customClass="FindDoctorMapController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6JG-Hw-k9J"/>
                         <viewControllerLayoutGuide type="bottom" id="dUN-Ax-y1h"/>
@@ -1344,10 +1345,6 @@
                                     <action selector="submit:" destination="xED-yK-4wj" eventType="touchUpInside" id="1x2-t5-vaQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nty-1K-izo">
-                                <rect key="frame" x="62" y="94" width="240" height="223"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r42-lt-WkK" userLabel="Cancel">
                                 <rect key="frame" x="163" y="570" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1356,6 +1353,14 @@
                                     <action selector="cancel:" destination="xED-yK-4wj" eventType="touchUpInside" id="MMm-Pa-5le"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-z0-mvd">
+                                <rect key="frame" x="128" y="483" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nty-1K-izo">
+                                <rect key="frame" x="67" y="164" width="240" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1431,7 +1436,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="udd-3d-DV6" id="QQo-BS-oN2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-1u-K1C" userLabel="HealthConcernImage">
@@ -1931,7 +1936,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2FA-Ol-eW2" id="fyF-w7-QAH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UYj-1h-4Si">
@@ -2141,6 +2146,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHj-VG-EWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1538" y="2686"/>
+        </scene>
+        <!--Doctor Details Controller-->
+        <scene sceneID="mD3-xH-U4d">
+            <objects>
+                <viewController storyboardIdentifier="DoctorDetailsController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iU8-Xu-RYF" customClass="DoctorDetailsController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wku-c9-FPy"/>
+                        <viewControllerLayoutGuide type="bottom" id="DfX-2S-Idb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d3q-Bf-nTI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl2-1j-3D3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="493"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mK5-nY-tDZ" userLabel="Doctor Image">
+                                        <rect key="frame" x="8" y="8" width="359" height="355"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="355" id="aDm-t3-Z7M"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short Desc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZ7-xk-FmH">
+                                        <rect key="frame" x="10" y="378" width="355" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Desc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-EW-3kN">
+                                        <rect key="frame" x="10" y="409" width="355" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="Jfn-QH-ejX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.5671084206" green="0.5671084206" blue="0.5671084206" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mK5-nY-tDZ" firstAttribute="centerX" secondItem="Vl2-1j-3D3" secondAttribute="centerX" id="2Q6-gA-Osx"/>
+                                    <constraint firstItem="GZ7-xk-FmH" firstAttribute="centerX" secondItem="Vl2-1j-3D3" secondAttribute="centerX" id="4Pl-4k-lcr"/>
+                                    <constraint firstItem="GZ7-xk-FmH" firstAttribute="leading" secondItem="Vl2-1j-3D3" secondAttribute="leading" constant="10" id="86G-Dd-tMj"/>
+                                    <constraint firstItem="mK5-nY-tDZ" firstAttribute="leading" secondItem="Vl2-1j-3D3" secondAttribute="leading" constant="8" id="8bD-Nl-WSC"/>
+                                    <constraint firstItem="GZ7-xk-FmH" firstAttribute="top" secondItem="mK5-nY-tDZ" secondAttribute="bottom" constant="15" id="J4m-Vv-cqZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="GZ7-xk-FmH" secondAttribute="trailing" constant="10" id="Orm-GK-wh7"/>
+                                    <constraint firstItem="mK5-nY-tDZ" firstAttribute="top" secondItem="Vl2-1j-3D3" secondAttribute="top" constant="8" id="Raf-6O-yff"/>
+                                    <constraint firstAttribute="bottom" secondItem="Bgn-EW-3kN" secondAttribute="bottom" constant="27" id="TIe-gr-Ivp"/>
+                                    <constraint firstAttribute="trailing" secondItem="mK5-nY-tDZ" secondAttribute="trailing" constant="8" id="YXW-yW-wBH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bgn-EW-3kN" secondAttribute="trailing" constant="10" id="af3-Au-Hsu"/>
+                                    <constraint firstItem="GZ7-xk-FmH" firstAttribute="centerX" secondItem="Vl2-1j-3D3" secondAttribute="centerX" id="nrv-hh-0Wp"/>
+                                    <constraint firstItem="Bgn-EW-3kN" firstAttribute="top" secondItem="GZ7-xk-FmH" secondAttribute="bottom" constant="10" id="vkq-Oz-G6r"/>
+                                    <constraint firstItem="Bgn-EW-3kN" firstAttribute="leading" secondItem="Vl2-1j-3D3" secondAttribute="leading" constant="10" id="xpt-He-e4S"/>
+                                    <constraint firstItem="Bgn-EW-3kN" firstAttribute="centerX" secondItem="Vl2-1j-3D3" secondAttribute="centerX" id="yKO-Kh-TmQ"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncu-zz-ZhR">
+                                <rect key="frame" x="16" y="565" width="343" height="50"/>
+                                <color key="backgroundColor" red="0.24580448639999999" green="0.69086769199999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="9Bv-dJ-keI"/>
+                                    <constraint firstAttribute="height" constant="50" id="fcM-g4-2i1"/>
+                                </constraints>
+                                <state key="normal" title="Schedule an Appointment">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ncu-zz-ZhR" firstAttribute="trailing" secondItem="d3q-Bf-nTI" secondAttribute="trailingMargin" id="6Cl-vz-AQ6"/>
+                            <constraint firstAttribute="trailing" secondItem="Vl2-1j-3D3" secondAttribute="trailing" id="FVO-zZ-Nd6"/>
+                            <constraint firstItem="Vl2-1j-3D3" firstAttribute="leading" secondItem="d3q-Bf-nTI" secondAttribute="leading" id="GNB-E8-ah5"/>
+                            <constraint firstItem="Vl2-1j-3D3" firstAttribute="top" secondItem="Wku-c9-FPy" secondAttribute="bottom" id="ROM-2a-D5L"/>
+                            <constraint firstItem="ncu-zz-ZhR" firstAttribute="top" secondItem="Vl2-1j-3D3" secondAttribute="bottom" constant="8" id="z5g-AR-xQS"/>
+                            <constraint firstItem="DfX-2S-Idb" firstAttribute="top" secondItem="ncu-zz-ZhR" secondAttribute="bottom" constant="8" id="zSa-ku-Idz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutme" destination="Bgn-EW-3kN" id="g5P-L6-m1h"/>
+                        <outlet property="companyName" destination="GZ7-xk-FmH" id="3nu-OL-CFC"/>
+                        <outlet property="doctorImage" destination="mK5-nY-tDZ" id="Atq-gs-RpG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="37U-qF-LYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.5999999999999" y="1246.3268365817091"/>
         </scene>
         <!--Checkout Controller-->
         <scene sceneID="HS8-f6-9sP">
@@ -2372,7 +2476,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="92g-ez-AEa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iC8-Ny-snS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iC8-Ny-snS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2390,7 +2494,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MFj-8j-eqS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vfo-U4-AHW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vfo-U4-AHW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2408,7 +2512,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k6d-oy-Etz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fh4-4a-d3I">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fh4-4a-d3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2426,7 +2530,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="z9k-F5-lvv" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MBf-6s-1FP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MBf-6s-1FP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2444,7 +2548,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F9e-aK-cnj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="L7X-ho-yW9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L7X-ho-yW9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2462,7 +2566,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0g6-40-bja" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZTG-If-Jvm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZTG-If-Jvm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2480,7 +2584,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uhr-Xx-q0U" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zZ3-W9-4TN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZ3-W9-4TN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2498,7 +2602,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JMx-Ba-8Iq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="22c-Rn-8Go">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="22c-Rn-8Go">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2531,7 +2635,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ll7-j9-10L" id="Rw1-oC-doh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hEg-UH-yAF" userLabel="Doctor Image">
@@ -2596,6 +2700,7 @@
                                             <outlet property="discipline" destination="wkC-R8-ZpU" id="JaZ-9u-FIH"/>
                                             <outlet property="doctorImage" destination="hEg-UH-yAF" id="fm1-Pv-pMR"/>
                                             <outlet property="name" destination="cWB-2X-Y1C" id="ft4-1s-ZJM"/>
+                                            <segue destination="iU8-Xu-RYF" kind="show" id="WeT-tj-Scf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2635,7 +2740,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vWG-4J-2jo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XBe-LR-Hpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBe-LR-Hpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

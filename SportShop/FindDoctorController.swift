@@ -12,6 +12,10 @@ import Kinvey
 
 class FindDoctorTableViewController: UITableViewController {
     
+    lazy var doctorStore:DataStore<Doctor> = {
+        return DataStore<Doctor>.collection(.network)
+    }()
+
     @IBOutlet weak var specialtyTextField: UITextField!
     @IBOutlet weak var specialtyLabel: UILabel!
     let specialtyPickerView = UIPickerView()
@@ -48,6 +52,26 @@ class FindDoctorTableViewController: UITableViewController {
         genderTextField.inputView = genderPickerView
     }
     
+    @IBAction func submit(_ sender: AnyObject) {
+        let query = Query(format: "PostalCode == %@", locationTextField.text ?? "40514")
+        
+        doctorStore.find(query) { doctors, error in
+            if let _ = error {
+            
+            } else {
+                let destinationVC = FindDoctorMapController()
+                destinationVC.doctors = doctors!
+                
+                // Let's assume that the segue name is called playerSegue
+                // This will perform the segue and pre-load the variable for you to use
+                self.performSegue(withIdentifier: "findDoctors", sender: self)
+
+            }
+            
+        }
+
+        
+    }
 }
 
 extension FindDoctorTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {

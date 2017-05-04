@@ -12,6 +12,8 @@
 		571BECF91EBAD06200DEA215 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BECF81EBAD06200DEA215 /* RingView.swift */; };
 		961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C61EBA894C00D0223D /* HealthConcernsController.swift */; };
 		961E02C91EBA89AB00D0223D /* HealthConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */; };
+		961E02CB1EBBBD9200D0223D /* ApptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02CA1EBBBD9200D0223D /* ApptController.swift */; };
+		961E02CD1EBBBF3C00D0223D /* DoctorDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02CC1EBBBF3C00D0223D /* DoctorDetailsController.swift */; };
 		9623091A1E42421700706E0E /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* HealthUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
 		962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */; };
@@ -77,6 +79,8 @@
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		961E02C61EBA894C00D0223D /* HealthConcernsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcernsController.swift; sourceTree = "<group>"; };
 		961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcernCell.swift; sourceTree = "<group>"; };
+		961E02CA1EBBBD9200D0223D /* ApptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApptController.swift; sourceTree = "<group>"; };
+		961E02CC1EBBBF3C00D0223D /* DoctorDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorDetailsController.swift; sourceTree = "<group>"; };
 		962309191E42421700706E0E /* HealthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitHealthConcernController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				9654FCA81EB92A9400FCF5FD /* Appointment.swift */,
+				961E02CA1EBBBD9200D0223D /* ApptController.swift */,
 			);
 			name = Appointments;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			children = (
 				9691FDA81EB9060F00642E84 /* HealthTeamController.swift */,
 				9691FDAA1EB9068700642E84 /* DoctorCell.swift */,
+				961E02CC1EBBBF3C00D0223D /* DoctorDetailsController.swift */,
 			);
 			name = HealthTeam;
 			sourceTree = "<group>";
@@ -652,6 +658,7 @@
 				9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */,
 				9692A5861E39B04A00EBEC23 /* MenuItemCell.swift in Sources */,
 				9691FDA61EB8CC6000642E84 /* FindDoctorMapController.swift in Sources */,
+				961E02CD1EBBBF3C00D0223D /* DoctorDetailsController.swift in Sources */,
 				9674CF791E3D36D100666968 /* SignupController.swift in Sources */,
 				9691FDA41EB8CC4500642E84 /* FindDoctorController.swift in Sources */,
 				96A6AB5D1E3F993A0093C051 /* ProductCell.swift in Sources */,
@@ -663,6 +670,7 @@
 				9623091A1E42421700706E0E /* HealthUser.swift in Sources */,
 				96E445FD1E4047080050523A /* Activity.swift in Sources */,
 				96E4D9651E415E8800A7EF3C /* SettingsController.swift in Sources */,
+				961E02CB1EBBBD9200D0223D /* ApptController.swift in Sources */,
 				96E445FF1E404D6B0050523A /* ActivityManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

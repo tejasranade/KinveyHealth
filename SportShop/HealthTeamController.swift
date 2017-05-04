@@ -56,9 +56,9 @@ class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? doctorDetailController,
-//            let indexPath = self.tableView.indexPathForSelectedRow {
-//            destination.product = doctors?[indexPath.row]
-//        }
+        if let destination = segue.destination as? DoctorDetailsController,
+            let indexPath = self.tableView.indexPathForSelectedRow {
+            destination.doctor = doctors?[indexPath.row]
+        }
     }
 }

@@ -25,7 +25,6 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     @IBAction func useCamera(_ sender: AnyObject) {
         
             let imagePicker = UIImagePickerController()
-            
             imagePicker.delegate = self
             
             self.present(imagePicker, animated: true,

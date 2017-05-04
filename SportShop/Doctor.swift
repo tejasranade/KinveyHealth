@@ -19,6 +19,7 @@ class Doctor: Entity {
     dynamic var companyName: String?
     dynamic var imageSource: String?
     dynamic var location: GeoPoint?
+    dynamic var PostalCode: String?
 
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
@@ -35,7 +36,8 @@ class Doctor: Entity {
         aboutme <- map["AboutMe"]
         companyName <- map["CompanyName"]
         imageSource <- map["FullPhotoUrl"]
-        location <- map["location"]
+        location <- map["_geoloc"]
+        PostalCode <- map["PostalCode"]
     }
     
 }

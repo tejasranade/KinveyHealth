@@ -35,7 +35,7 @@ class ProductsController: UIViewController, UITableViewDelegate, UITableViewData
                 self.products = items
                 self.tableView.reloadData()
             } else {
-                print ("\(error)")
+                print ("\(String(describing: error))")
             }
         }
         

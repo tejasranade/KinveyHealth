@@ -30,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         
-        UINavigationBar.appearance().barTintColor = UIColor("#FF542D")
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        UINavigationBar.appearance().tintColor = UIColor("#652111")
+        //UINavigationBar.appearance().barTintColor = UIColor.darkGray
+        //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        //UINavigationBar.appearance().tintColor = UIColor("#652111")
 
         initializeKinvey()
 
