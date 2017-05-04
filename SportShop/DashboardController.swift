@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Charts
+import HealthKit
 
 class DashboardController: UIViewController{
     @IBOutlet var pieChart: PieChartView!
@@ -62,7 +63,46 @@ class DashboardController: UIViewController{
 
 class DashboardCollectionViewController: UICollectionViewController {
     
+    lazy var stepsIndexPath = IndexPath(item: 0, section: 0)
+    lazy var kcalBurnedIndexPath = IndexPath(item: 1, section: 0)
+    lazy var distanceIndexPath = IndexPath(item: 2, section: 0)
+    lazy var exerciseTimeIndexPath = IndexPath(item: 3, section: 0)
+    
+    var steps = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView?.reloadItems(at: [self.stepsIndexPath])
+            }
+        }
+    }
+    
+    var kcalBurned = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView?.reloadItems(at: [self.kcalBurnedIndexPath])
+            }
+        }
+    }
+    
+    var distanceInMeters = 0.0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView?.reloadItems(at: [self.distanceIndexPath])
+            }
+        }
+    }
+    
+    var exerciseTimeInMinutes = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView?.reloadItems(at: [self.exerciseTimeIndexPath])
+            }
+        }
+    }
+    
     var appointments = [Appointment]()
+    
+    lazy var healthKitStore = HKHealthStore()
     
     @IBAction func leftButtonTapped(_ sender: Any) {
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -83,6 +123,108 @@ class DashboardCollectionViewController: UICollectionViewController {
         appointment2.title = "Boston, MA"
         appointment2.apptDate = Date(timeIntervalSinceNow: 86400 * 5)
         appointments.append(appointment2)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let typesToRead = Set<HKObjectType>([
+//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
+//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!,
+            HKObjectType.activitySummaryType()
+        ])
+        
+        healthKitStore.requestAuthorization(toShare: nil, read: typesToRead) { (succeed, error) in
+            if succeed {
+                self.loadSteps()
+                self.loadKCalBurned()
+                self.loadDistance()
+                self.loadExerciseTime()
+            }
+        }
+    }
+    
+    var predicate: NSPredicate {
+        let calendar = Calendar.current
+        let now = Date()
+        let dateComponents = calendar.dateComponents([.calendar, .era, .year, .month, .day], from: now)
+        let startDate = calendar.date(from: dateComponents)
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: now)
+        return predicate
+    }
+    
+    func loadSteps() {
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int.max, sortDescriptors: nil) { (sampleQuery, results, error) in
+            let sum = results?.filter({
+                $0 is HKQuantitySample
+            }).map({
+                $0 as! HKQuantitySample
+            }).reduce(0, {
+                $0 + Int($1.quantity.doubleValue(for: HKUnit.count()))
+            })
+            if let sum = sum {
+                self.steps = sum
+            }
+        }
+        healthKitStore.execute(query)
+    }
+    
+    func loadKCalBurned() {
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int.max, sortDescriptors: nil) { (sampleQuery, results, error) in
+            let sum = results?.filter({
+                $0 is HKQuantitySample
+            }).map({
+                $0 as! HKQuantitySample
+            }).reduce(0, {
+                $0 + Int($1.quantity.doubleValue(for: HKUnit.kilocalorie()))
+            })
+            if let sum = sum {
+                self.kcalBurned = sum
+            }
+        }
+        healthKitStore.execute(query)
+    }
+    
+    func loadDistance() {
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int.max, sortDescriptors: nil) { (sampleQuery, results, error) in
+            let sum = results?.filter({
+                $0 is HKQuantitySample
+            }).map({
+                $0 as! HKQuantitySample
+            }).reduce(0.0, {
+                $0 + $1.quantity.doubleValue(for: HKUnit.meter())
+            })
+            if let sum = sum {
+                self.distanceInMeters = sum
+            }
+        }
+        healthKitStore.execute(query)
+    }
+    
+    func loadExerciseTime() {
+        let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!
+        let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int.max, sortDescriptors: nil) { (sampleQuery, results, error) in
+            let sum = results?.filter({
+                $0 is HKQuantitySample
+            }).map({
+                $0 as! HKQuantitySample
+            }).reduce(0, {
+                $0 + Int($1.quantity.doubleValue(for: HKUnit.minute()))
+            })
+            if let sum = sum {
+                self.exerciseTimeInMinutes = sum
+            }
+        }
+        healthKitStore.execute(query)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -106,35 +248,41 @@ class DashboardCollectionViewController: UICollectionViewController {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Progress", for: indexPath) as! DashboardCollectionViewCell
-            switch indexPath.item {
-            case 0:
+            switch indexPath {
+            case stepsIndexPath:
                 cell.titleLabel.text = "STEPS"
                 cell.iconImageView.image = UIImage(named: "steps")
-                cell.scoreLabel.text = "7,500"
+                cell.scoreLabel.text = String(steps)
                 cell.goalLabel.text = "Goal: 10,000"
                 cell.ringView.ringColor = UIColor("#41D3AC")
-                cell.ringView.progress = 0.75
-            case 1:
+                cell.ringView.progress = CGFloat(steps) / 10000
+            case kcalBurnedIndexPath:
                 cell.titleLabel.text = "kCAL BURNED"
                 cell.iconImageView.image = UIImage(named: "kcal burned")
-                cell.scoreLabel.text = "203"
+                cell.scoreLabel.text = String(kcalBurned)
                 cell.goalLabel.text = "Goal: 450"
                 cell.ringView.ringColor = UIColor("#D3418A")
-                cell.ringView.progress = 0.4
-            case 2:
+                cell.ringView.progress = CGFloat(kcalBurned) / 450
+            case distanceIndexPath:
                 cell.titleLabel.text = "DISTANCE (km)"
                 cell.iconImageView.image = UIImage(named: "distance")
-                cell.scoreLabel.text = "4.25"
+                let distanceInKm = distanceInMeters / 1000
+                
+                let numberFormatter = NumberFormatter()
+                numberFormatter.minimumIntegerDigits = 1
+                numberFormatter.maximumFractionDigits = 1
+                cell.scoreLabel.text = numberFormatter.string(for: distanceInKm)
+                
                 cell.goalLabel.text = "Goal: 7.5"
                 cell.ringView.ringColor = UIColor("#41A0D3")
-                cell.ringView.progress = 0.6
-            case 3:
-                cell.titleLabel.text = "METRIC"
+                cell.ringView.progress = CGFloat(distanceInKm) / 7.5
+            case exerciseTimeIndexPath:
+                cell.titleLabel.text = "EXERCISE TIME"
                 cell.iconImageView.image = UIImage(named: "metric")
-                cell.scoreLabel.text = "###"
-                cell.goalLabel.text = "Goal: ###"
+                cell.scoreLabel.text = String(exerciseTimeInMinutes)
+                cell.goalLabel.text = "Goal: 30 minutes"
                 cell.ringView.ringColor = UIColor("#E8D964")
-                cell.ringView.progress = 0.75
+                cell.ringView.progress = CGFloat(exerciseTimeInMinutes) / 30
             default:
                 fatalError()
             }
