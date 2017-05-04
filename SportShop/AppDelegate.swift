@@ -24,10 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var drawerController: AppNavigationDrawerController?
     
-    lazy var rootViewController: DashboardController = {
-        return UIStoryboard.viewController(identifier: "DashboardController") as! DashboardController
-    }()
-    
     lazy var leftViewController: LeftViewController = {
         return UIStoryboard.viewController(identifier: "LeftViewController") as! LeftViewController
     }()
@@ -46,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         window = UIWindow(frame: Screen.bounds)
+        let rootViewController = UIStoryboard.viewController(identifier: "DashboardController")
         drawerController = AppNavigationDrawerController(rootViewController: UINavigationController(rootViewController: rootViewController),
                                                          leftViewController: leftViewController)
         window!.rootViewController = drawerController
@@ -60,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initializeKinvey(){
-        Kinvey.sharedClient.initialize(appKey: "kid_B1Vak6Ey-", appSecret: "", apiHostName: URL(string: "https://kvy-us2-baas.kinvey.com/")!
+        Kinvey.sharedClient.initialize(appKey: "kid_B1Vak6Ey-", appSecret: "aa9a2a42b7d741bba30bb94b599a5f0b", apiHostName: URL(string: "https://kvy-us2-baas.kinvey.com/")!
 )
         Kinvey.sharedClient.logNetworkEnabled = true
         //Kinvey.sharedClient.userType = AdidasUser.self
