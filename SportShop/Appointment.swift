@@ -28,7 +28,7 @@ class Appointment: Entity {
         //Each property in your entity should be mapped using the following scheme:
         //<member variable> <- ("<backend property>", map["<backend property>"])
         doctor <- map["doctor"]
-        title <- map["title"]
+        title <- map["Name"]
         apptDate <- map["apptDate"]
     }
     

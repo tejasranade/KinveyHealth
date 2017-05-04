@@ -33,5 +33,4 @@ class HealthConcern: Entity {
         imageSource <- map["concernPic"]
         patientName <- map["patientName"]
     }
-    
 }

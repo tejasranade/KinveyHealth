@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
+		961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C61EBA894C00D0223D /* HealthConcernsController.swift */; };
+		961E02C91EBA89AB00D0223D /* HealthConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */; };
 		9623091A1E42421700706E0E /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* HealthUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
 		962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */; };
@@ -71,6 +73,8 @@
 		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
+		961E02C61EBA894C00D0223D /* HealthConcernsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcernsController.swift; sourceTree = "<group>"; };
+		961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcernCell.swift; sourceTree = "<group>"; };
 		962309191E42421700706E0E /* HealthUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthUser.swift; sourceTree = "<group>"; };
 		9625D0B11EB78A63002E6BAA /* DashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitHealthConcernController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 			children = (
 				9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */,
 				962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */,
+				961E02C61EBA894C00D0223D /* HealthConcernsController.swift */,
+				961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */,
 			);
 			name = HealthConcern;
 			sourceTree = "<group>";
@@ -633,10 +639,12 @@
 				9692A5921E3AE41D00EBEC23 /* SupportViewController.swift in Sources */,
 				96A6AB591E3EF54B0093C051 /* ProductsController.swift in Sources */,
 				9691FDAB1EB9068700642E84 /* DoctorCell.swift in Sources */,
+				961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */,
 				9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */,
 				9692A5801E398EA800EBEC23 /* LeftViewController.swift in Sources */,
 				96A6AB5B1E3F928D0093C051 /* Product.swift in Sources */,
 				9654FCA11EB917E800FCF5FD /* Doctor.swift in Sources */,
+				961E02C91EBA89AB00D0223D /* HealthConcernCell.swift in Sources */,
 				9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */,
 				9692A5861E39B04A00EBEC23 /* MenuItemCell.swift in Sources */,
 				9691FDA61EB8CC6000642E84 /* FindDoctorMapController.swift in Sources */,

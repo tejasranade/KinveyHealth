@@ -27,9 +27,9 @@ class DocumentsController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         //let query = Query(format: "category == %@", "shoes")
-        let query = Query(format: "healthconcern == false")
+        //let query = Query(format: "healthconcern == false")
         //fileStore.find (query) { (items, error) in
-        fileStore.find (query) { (items, error) in
+        fileStore.find () { (items, error) in
             if let items = items {
                 self.files = items
                 self.tableView.reloadData()
