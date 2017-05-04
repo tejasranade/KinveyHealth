@@ -29,8 +29,18 @@ class RingView: UIView {
     var progress = CGFloat(0) {
         didSet {
             shapeLayer.strokeEnd = progress
+            if animationDuration > 0, oldValue != progress {
+                let animation = CABasicAnimation()
+                animation.duration = CFTimeInterval(animationDuration)
+                animation.fromValue = 0
+                animation.toValue = progress
+                shapeLayer.add(animation, forKey: "strokeEnd")
+            }
         }
     }
+    
+    @IBInspectable
+    var animationDuration = 0.0
     
     override class var layerClass: AnyClass {
         return CAShapeLayer.self
@@ -52,7 +62,7 @@ class RingView: UIView {
             startAngle: CGFloat(-pi2),
             endAngle: CGFloat(3 * pi2),
             clockwise: true
-            ).cgPath
+        ).cgPath
         shapeLayer.strokeStart = 0
         shapeLayer.fillColor = nil
     }

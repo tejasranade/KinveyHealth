@@ -176,6 +176,9 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
                                                     <integer key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="steps" translatesAutoresizingMaskIntoConstraints="NO" id="XOQ-bb-9BO">

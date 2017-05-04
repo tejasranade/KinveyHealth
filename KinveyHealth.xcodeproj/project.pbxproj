@@ -10,6 +10,7 @@
 		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		571BECF91EBAD06200DEA215 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BECF81EBAD06200DEA215 /* RingView.swift */; };
+		57F4F1AB1EBBB17800CDDAA8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */; };
 		961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C61EBA894C00D0223D /* HealthConcernsController.swift */; };
 		961E02C91EBA89AB00D0223D /* HealthConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */; };
 		9623091A1E42421700706E0E /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* HealthUser.swift */; };
@@ -72,6 +73,8 @@
 		15A0F9BF306E76A6AAA0202F /* Pods-KinveyHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		571BECF81EBAD06200DEA215 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinveyHealth.entitlements; sourceTree = SOURCE_ROOT; };
+		57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1E0EE2D8506C73BB07592BB /* Pods_KinveyHealth.framework in Frameworks */,
+				57F4F1AB1EBBB17800CDDAA8 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +171,7 @@
 		9422CA11E122562E567F1230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */,
 				D70CC66745BD47B319B452A6 /* Pods_KinveyHealth.framework */,
 				2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */,
 				58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */,
@@ -303,6 +308,7 @@
 		96B01EEB1E39237F00E2CFE1 /* KinveyHealth */ = {
 			isa = PBXGroup;
 			children = (
+				57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */,
 				9654FCA71EB92A8700FCF5FD /* Appointments */,
 				9654FCA61EB92A3300FCF5FD /* HealthConcern */,
 				9691FDA71EB9060000642E84 /* HealthTeam */,
@@ -428,6 +434,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5W7CYNR7UE;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					96B01EFC1E39237F00E2CFE1 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -817,6 +828,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = KinveyHealth.entitlements;
 				DEVELOPMENT_TEAM = 5W7CYNR7UE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,7 +837,7 @@
 				INFOPLIST_FILE = SportShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.KinveyHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.kinveyhealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -837,6 +849,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = KinveyHealth.entitlements;
 				DEVELOPMENT_TEAM = 5W7CYNR7UE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -845,7 +858,7 @@
 				INFOPLIST_FILE = SportShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.KinveyHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinvey.kinveyhealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
