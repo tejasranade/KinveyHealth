@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
+		571BECF91EBAD06200DEA215 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BECF81EBAD06200DEA215 /* RingView.swift */; };
 		9623091A1E42421700706E0E /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962309191E42421700706E0E /* HealthUser.swift */; };
 		9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D0B11EB78A63002E6BAA /* DashboardController.swift */; };
 		962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962A6C711EBA675A007D4A46 /* SubmitHealthConcernController.swift */; };
@@ -68,6 +69,7 @@
 		10118930B3B9EF495ECF7E9B /* Pods-KinveyHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthTests/Pods-KinveyHealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		15A0F9BF306E76A6AAA0202F /* Pods-KinveyHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		571BECF81EBAD06200DEA215 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				9625D0B11EB78A63002E6BAA /* DashboardController.swift */,
+				571BECF81EBAD06200DEA215 /* RingView.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571BECF91EBAD06200DEA215 /* RingView.swift in Sources */,
 				9692A57E1E398DAE00EBEC23 /* AppNavigationDrawerController.swift in Sources */,
 				9691FD9E1EB7CB3600642E84 /* DocumentDetailController.swift in Sources */,
 				96E445FB1E403F1F0050523A /* NotificationController.swift in Sources */,

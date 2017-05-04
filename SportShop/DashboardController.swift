@@ -112,21 +112,29 @@ class DashboardCollectionViewController: UICollectionViewController {
                 cell.iconImageView.image = UIImage(named: "steps")
                 cell.scoreLabel.text = "7,500"
                 cell.goalLabel.text = "Goal: 10,000"
+                cell.ringView.ringColor = UIColor("#41D3AC")
+                cell.ringView.progress = 0.75
             case 1:
                 cell.titleLabel.text = "kCAL BURNED"
                 cell.iconImageView.image = UIImage(named: "kcal burned")
                 cell.scoreLabel.text = "203"
                 cell.goalLabel.text = "Goal: 450"
+                cell.ringView.ringColor = UIColor("#D3418A")
+                cell.ringView.progress = 0.4
             case 2:
                 cell.titleLabel.text = "DISTANCE (km)"
                 cell.iconImageView.image = UIImage(named: "distance")
                 cell.scoreLabel.text = "4.25"
                 cell.goalLabel.text = "Goal: 7.5"
+                cell.ringView.ringColor = UIColor("#41A0D3")
+                cell.ringView.progress = 0.6
             case 3:
                 cell.titleLabel.text = "METRIC"
                 cell.iconImageView.image = UIImage(named: "metric")
                 cell.scoreLabel.text = "###"
                 cell.goalLabel.text = "Goal: ###"
+                cell.ringView.ringColor = UIColor("#E8D964")
+                cell.ringView.progress = 0.75
             default:
                 fatalError()
             }
@@ -227,6 +235,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var ringView: RingView!
     
 }
 
