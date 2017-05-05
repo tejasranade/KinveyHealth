@@ -23,6 +23,8 @@
 		9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA41EB9252F00FCF5FD /* IDCard.swift */; };
 		9654FCA91EB92A9400FCF5FD /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA81EB92A9400FCF5FD /* Appointment.swift */; };
 		9671972F1EBCCA8A00414BCE /* ClinicalSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */; };
+		967197311EBCF79E00414BCE /* Immunization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967197301EBCF79E00414BCE /* Immunization.swift */; };
+		967197331EBCF7AC00414BCE /* Prescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967197321EBCF7AC00414BCE /* Prescription.swift */; };
 		9674CF791E3D36D100666968 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674CF781E3D36D100666968 /* SignupController.swift */; };
 		9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD991EB7B4AE00642E84 /* DocumentsController.swift */; };
 		9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */; };
@@ -93,6 +95,8 @@
 		9654FCA41EB9252F00FCF5FD /* IDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
 		9654FCA81EB92A9400FCF5FD /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalSummaryController.swift; sourceTree = "<group>"; };
+		967197301EBCF79E00414BCE /* Immunization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Immunization.swift; sourceTree = "<group>"; };
+		967197321EBCF7AC00414BCE /* Prescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prescription.swift; sourceTree = "<group>"; };
 		9674CF781E3D36D100666968 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9691FD991EB7B4AE00642E84 /* DocumentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsController.swift; sourceTree = "<group>"; };
 		9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
@@ -218,8 +222,11 @@
 			isa = PBXGroup;
 			children = (
 				9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */,
+				967197301EBCF79E00414BCE /* Immunization.swift */,
+				967197321EBCF7AC00414BCE /* Prescription.swift */,
 			);
 			name = ClinicalSummary;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9691FD981EB7B48B00642E84 /* Documents */ = {
@@ -244,21 +251,14 @@
 		9691FDA21EB8CC3100642E84 /* Doctors */ = {
 			isa = PBXGroup;
 			children = (
+				9691FDA81EB9060F00642E84 /* HealthTeamController.swift */,
+				9691FDAA1EB9068700642E84 /* DoctorCell.swift */,
+				961E02CC1EBBBF3C00D0223D /* DoctorDetailsController.swift */,
 				9691FDA31EB8CC4500642E84 /* FindDoctorController.swift */,
 				9691FDA51EB8CC6000642E84 /* FindDoctorMapController.swift */,
 				9654FCA01EB917E800FCF5FD /* Doctor.swift */,
 			);
 			name = Doctors;
-			sourceTree = "<group>";
-		};
-		9691FDA71EB9060000642E84 /* HealthTeam */ = {
-			isa = PBXGroup;
-			children = (
-				9691FDA81EB9060F00642E84 /* HealthTeamController.swift */,
-				9691FDAA1EB9068700642E84 /* DoctorCell.swift */,
-				961E02CC1EBBBF3C00D0223D /* DoctorDetailsController.swift */,
-			);
-			name = HealthTeam;
 			sourceTree = "<group>";
 		};
 		9692A58A1E3A7BD100EBEC23 /* Account */ = {
@@ -302,7 +302,6 @@
 		96B01EE01E39237F00E2CFE1 = {
 			isa = PBXGroup;
 			children = (
-				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				96B01EEB1E39237F00E2CFE1 /* KinveyHealth */,
 				96B01F001E39237F00E2CFE1 /* KinveyHealthTests */,
 				96B01F0B1E39237F00E2CFE1 /* KinveyHealthUITests */,
@@ -326,9 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */,
+				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				9654FCA71EB92A8700FCF5FD /* Appointments */,
 				9654FCA61EB92A3300FCF5FD /* HealthConcern */,
-				9691FDA71EB9060000642E84 /* HealthTeam */,
 				9691FDA21EB8CC3100642E84 /* Doctors */,
 				9691FD9F1EB7DCF500642E84 /* IDCard */,
 				9691FD981EB7B48B00642E84 /* Documents */,
@@ -673,6 +672,8 @@
 				96A6AB591E3EF54B0093C051 /* ProductsController.swift in Sources */,
 				9691FDAB1EB9068700642E84 /* DoctorCell.swift in Sources */,
 				961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */,
+				967197311EBCF79E00414BCE /* Immunization.swift in Sources */,
+				967197331EBCF7AC00414BCE /* Prescription.swift in Sources */,
 				9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */,
 				9692A5801E398EA800EBEC23 /* LeftViewController.swift in Sources */,
 				96A6AB5B1E3F928D0093C051 /* Product.swift in Sources */,

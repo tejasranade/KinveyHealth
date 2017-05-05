@@ -1,26 +1,27 @@
 //
-//  HealthConcern.swift
+//  Immunization.swift
 //  KinveyHealth
 //
-//  Created by Tejas on 5/2/17.
+//  Created by Tejas on 5/5/17.
 //  Copyright © 2017 Kinvey. All rights reserved.
 //
 
 import Foundation
 import Kinvey
 import ObjectMapper
-import Realm
 
-class HealthConcern: Entity {
+class Prescription: Entity {
+    
     var name: String?
-    var discomfort: String?
-    var imageSource: String?
-    var pcpEmail: String?
-    //var patientName: String?
+    var dose: Int?
+    var doseUnit: String?
+    var freqPeriod: String?
+    var freqUnit: String?
+    
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
-        return "healthconcern"
+        return "prescriptions"
     }
     
     //Map properties in your backend collection to the members of this entity
@@ -29,9 +30,10 @@ class HealthConcern: Entity {
         super.propertyMapping(map)
         //Each property in your entity should be mapped using the following scheme:
         //<member variable> <- ("<backend property>", map["<backend property>"])
-        name <- map["healthconcern"]
-        discomfort <- map["discomfort"]
-        imageSource <- map["concernpic"]
-        pcpEmail <- map["pcpemail"]
+        name <- map["name"]
+        dose <- map["dose"]
+        doseUnit <- map["dose_unit"]
+        freqPeriod <- map["freq_period"]
+        freqUnit <- map["freq_unit"]
     }
 }
