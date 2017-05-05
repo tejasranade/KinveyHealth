@@ -23,6 +23,9 @@ PODS:
     - Realm (~> 2.0)
     - RealmSwift (~> 2.0)
     - XCGLogger (~> 4.0.0)
+  - KinveyResearchKit (0.0.2):
+    - Kinvey (~> 3.5)
+    - ResearchKit (~> 1.4)
   - Material (2.6.3):
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
@@ -38,11 +41,12 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.2.0):
     - PromiseKit/CorePromise
-  - Realm (2.6.2):
-    - Realm/Headers (= 2.6.2)
-  - Realm/Headers (2.6.2)
-  - RealmSwift (2.6.2):
-    - Realm (= 2.6.2)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - ResearchKit (1.4.1)
   - UIColor_Hex_Swift (3.0.2)
   - XCGLogger (4.0.0):
     - XCGLogger/Core (= 4.0.0)
@@ -55,6 +59,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Haneke (~> 1.0)
   - Kinvey
+  - KinveyResearchKit
   - Material (~> 2.0)
   - UIColor_Hex_Swift (~> 3.0)
   - YouTubePlayer
@@ -68,15 +73,17 @@ SPEC CHECKSUMS:
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
   Kinvey: 3d619386a70076c578bb3d82ba3753a74ac7d20b
+  KinveyResearchKit: 80f0e66822fb6c547363d9c2d888d66e209166b5
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
-  ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
-  PromiseKit: 08dfb783c161ddcd95b7912421f14c5113fd8318
-  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
-  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  ObjectMapper: '042708195cc46c20871cbcbec0453826398273fd'
+  PromiseKit: '08dfb783c161ddcd95b7912421f14c5113fd8318'
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  ResearchKit: 3533ea3a2270e4ed7ff830e19755dc959fdfd430
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
   XCGLogger: 38063ea89b4c8b23232d18efd2e12eb0005f3ea4
-  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
+  YouTubePlayer: '028451f6772f372d4759866db99824c676ac1473'
 
-PODFILE CHECKSUM: 1248b4f71d686036b54d5e85991cbb9e5b013fd0
+PODFILE CHECKSUM: 901f5e09710cb13e58fab72a144a07b1f2a55304
 
 COCOAPODS: 1.2.1

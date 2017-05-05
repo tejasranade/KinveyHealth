@@ -11,6 +11,7 @@
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		571BECF91EBAD06200DEA215 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BECF81EBAD06200DEA215 /* RingView.swift */; };
 		57F4F1AB1EBBB17800CDDAA8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */; };
+		57F4F1AE1EBBFCBE00CDDAA8 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4F1AD1EBBFCBE00CDDAA8 /* SurveyViewController.swift */; };
 		961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C61EBA894C00D0223D /* HealthConcernsController.swift */; };
 		961E02C91EBA89AB00D0223D /* HealthConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C81EBA89AB00D0223D /* HealthConcernCell.swift */; };
 		961E02CB1EBBBD9200D0223D /* ApptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02CA1EBBBD9200D0223D /* ApptController.swift */; };
@@ -80,6 +81,7 @@
 		571BECF81EBAD06200DEA215 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinveyHealth.entitlements; sourceTree = SOURCE_ROOT; };
 		57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		57F4F1AD1EBBFCBE00CDDAA8 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4242C16F78EF3AD7F2DE07 /* Pods-KinveyHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8164702D35E0AB33569DA73F /* Pods-KinveyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealth/Pods-KinveyHealth.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57F4F1AC1EBBFCA600CDDAA8 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				57F4F1AD1EBBFCBE00CDDAA8 /* SurveyViewController.swift */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
 		64CBA186750D500C67D286E1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +334,7 @@
 		96B01EEB1E39237F00E2CFE1 /* KinveyHealth */ = {
 			isa = PBXGroup;
 			children = (
+				57F4F1AC1EBBFCA600CDDAA8 /* Survey */,
 				57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */,
 				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				9654FCA71EB92A8700FCF5FD /* Appointments */,
@@ -658,6 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F4F1AE1EBBFCBE00CDDAA8 /* SurveyViewController.swift in Sources */,
 				571BECF91EBAD06200DEA215 /* RingView.swift in Sources */,
 				9692A57E1E398DAE00EBEC23 /* AppNavigationDrawerController.swift in Sources */,
 				9691FD9E1EB7CB3600642E84 /* DocumentDetailController.swift in Sources */,
