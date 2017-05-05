@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import Charts
 import HealthKit
+import Kinvey
 
 class DashboardController: UIViewController{
     @IBOutlet var pieChart: PieChartView!
@@ -19,16 +20,14 @@ class DashboardController: UIViewController{
         appDelegate.drawerController?.toggleLeftView()
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //pieChart.data = data
-
+        
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
         
         setChart(dataPoints: months, values: unitsSold)
-        
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
@@ -127,24 +126,34 @@ class DashboardCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    
+        //slight hack. Should be in leftnav
+        if Kinvey.sharedClient.activeUser == nil {
+            let login = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+            present(login, animated: true, completion: {
+                print("login presented")
+            })
+        }
         
-        let typesToRead = Set<HKObjectType>([
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!,
-            HKObjectType.activitySummaryType()
-        ])
-        
-        healthKitStore.requestAuthorization(toShare: nil, read: typesToRead) { (succeed, error) in
-            if succeed {
-                self.loadSteps()
-                self.loadKCalBurned()
-                self.loadDistance()
-                self.loadExerciseTime()
+        else {
+            let typesToRead = Set<HKObjectType>([
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!,
+                HKObjectType.activitySummaryType()
+                ])
+            
+            healthKitStore.requestAuthorization(toShare: nil, read: typesToRead) { (succeed, error) in
+                if succeed {
+                    self.loadSteps()
+                    self.loadKCalBurned()
+                    self.loadDistance()
+                    self.loadExerciseTime()
+                }
             }
         }
     }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Kinvey
 
-class SignupController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SignupController: UIViewController{
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -19,9 +19,9 @@ class SignupController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     //var imagePicker: UIImagePickerController!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var lastnameField: UITextField!
-    var selectedSport: String?
-
-    var sportData: [String] = ["Basketball", "Tennis", "Football", "Soccer", "Baseball", "Hockey"]
+//    var selectedSport: String?
+//
+//    var sportData: [String] = ["Basketball", "Tennis", "Football", "Soccer", "Baseball", "Hockey"]
     
     @IBAction func signup(_ sender: Any) {
         if let un = emailField.text,
@@ -52,22 +52,22 @@ class SignupController: UIViewController, UIPickerViewDelegate, UIPickerViewData
     }
 
     
-    @available(iOS 2.0, *)
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sportData.count
-    }
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sportData[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedSport = sportData[row]
-    }
+//    @available(iOS 2.0, *)
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//    
+//    // The number of rows of data
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return sportData.count
+//    }
+//    
+//    // The data to return for the row and component (column) that's being passed in
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return sportData[row]
+//    }
+//    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        selectedSport = sportData[row]
+//    }
 }

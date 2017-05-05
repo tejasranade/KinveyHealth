@@ -11,61 +11,45 @@ import UIKit
 import Kinvey
 import FBSDKLoginKit
 
-class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SettingsController: UIViewController {
     
-    
-    var sportData: [String] = ["Basketball", "Tennis", "Football", "Soccer", "Baseball", "Hockey"]
-    
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.reloadAllComponents()
         
-//        if let user = Kinvey.sharedClient.activeUser as? HealthUser,
-//            let sport = user.sport,
-//            let index = sportData.index(of: sport) {
-//            
-//            picker.selectRow(index, inComponent: 0, animated: true)
-//        }
-    
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+            email.text = user.email
+            firstName.text = user.firstname
+            lastName.text = user.lastname
+        }
+        
+        
     }
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func save(_ sender: Any) {
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser{
+            user.email = email.text
+            user.firstname = firstName.text
+            user.lastname = lastName.text
+            //user.save()
+        }
+    }
     @IBAction func logout(_ sender: Any) {
         Kinvey.sharedClient.activeUser?.logout()
-        FBSDKLoginManager().logOut()
-        User.login(username: "Guest", password: "kinvey") { user, error in
-            if let _ = user {
-                NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
-                self.dismiss(animated:true, completion: nil)
-            }
-        }
-    }
-    
-    @available(iOS 2.0, *)
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sportData.count
-    }
-    
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sportData[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //selectedSport = sportData[row]
-        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
-            //user.sport = sportData[row]
-            user.save() { user, error in
-            }
-        }
+        self.dismiss(animated:true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
+        
+//        User.login(username: "Guest", password: "kinvey") { user, error in
+//            if let _ = user {
+//                NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
+//                self.dismiss(animated:true, completion: nil)
+//            }
+//        }
     }
 }

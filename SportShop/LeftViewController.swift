@@ -33,8 +33,30 @@ import Material
 import Kinvey
 
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Dashboard", "Documents", "Find a Doctor", "Health Team", "Telemedicine", "ID Card", "Take a survey", "Support"]
-    let menuControllers = ["DashboardController", "DocumentsController", "FindDoctorController", "HealthTeamController", "HealthConcernsController", "IDController", "SurveyViewController", "SupportViewController"]
+    let menuItems = [
+        "Dashboard",
+        "Documents",
+        "Appointments",
+        "Clinical Summary",
+        "Find a Doctor",
+        "Health Team",
+        "Telemedicine",
+        "ID Card",
+        "Take a survey",
+        "Support"
+    ]
+    let menuControllers = [
+        "DashboardController",
+        "DocumentsController",
+        "ApptController",
+        "ClinicalSummaryController",
+        "FindDoctorController",
+        "HealthTeamController",
+        "HealthConcernsController",
+        "IDController",
+        "SurveyViewController",
+        "SupportViewController"
+    ]
     
     @IBOutlet weak var welcomeMsg: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -64,7 +86,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func onProfileTapped(_ sender: UITapGestureRecognizer) {
-        if Kinvey.sharedClient.isNamedUser() {
+        if let _ = Kinvey.sharedClient.activeUser {
             let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsController") as! SettingsController
             present(settings, animated: true, completion: {
                 print("settings presented")
@@ -79,11 +101,14 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     func updateUser(){
-        if Kinvey.sharedClient.isNamedUser(),
-            let name = Kinvey.sharedClient.realUserName() {
-            welcomeMsg.text = "Welcome, \(name)!"
+        if let user = Kinvey.sharedClient.activeUser {
+            welcomeMsg.text = "Welcome, \(String(describing: user.username!))!"
         } else {
-            welcomeMsg.text = "Welcome, Guest!"
+            welcomeMsg.text = ""
+            let login = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+            present(login, animated: true, completion: {
+                print("login presented")
+            })
         }
         
         if let user = Kinvey.sharedClient.activeUser as? HealthUser,
@@ -92,7 +117,6 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             profileImage.image = UIImage(named:"anon")
         }
-        
     }
     
     func loadImage (_ src: String) {

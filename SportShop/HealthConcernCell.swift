@@ -20,7 +20,7 @@ class HealthConcernCell: UITableViewCell {
     override func layoutSubviews() {
         name.text = healthConcern?.name
         discipline.text = healthConcern?.discomfort
-        address.text = healthConcern?.patientName
+        address.text = healthConcern?.pcpEmail
         
         if let src = healthConcern?.imageSource {
             self.loadImage(src)
