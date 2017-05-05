@@ -67,6 +67,11 @@ class DashboardCollectionViewController: UICollectionViewController {
     lazy var distanceIndexPath = IndexPath(item: 2, section: 0)
     lazy var exerciseTimeIndexPath = IndexPath(item: 3, section: 0)
     
+    lazy var apptStore:DataStore<Appointment> = {
+        return DataStore<Appointment>.collection(.cache)
+    }()
+
+    
     var steps = 0 {
         didSet {
             DispatchQueue.main.async {
@@ -111,17 +116,19 @@ class DashboardCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let appointment1 = Appointment()
-        appointment1.doctor = "Personal training"
-        appointment1.title = "Boston, MA"
-        appointment1.apptDate = Date(timeIntervalSinceNow: 86400)
-        appointments.append(appointment1)
         
-        let appointment2 = Appointment()
-        appointment2.doctor = "Dr. Dolittle"
-        appointment2.title = "Boston, MA"
-        appointment2.apptDate = Date(timeIntervalSinceNow: 86400 * 5)
-        appointments.append(appointment2)
+        let pageOne = Query {
+            $0.limit = 3
+        }
+
+        apptStore.find (pageOne) { (items, error) in
+            if let items = items {
+                self.appointments = items
+                self.collectionView?.reloadData()
+            } else {
+                print ("\(String(describing: error))")
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -307,15 +314,18 @@ class DashboardCollectionViewController: UICollectionViewController {
                 cell.doctorLabel.text = appointment.doctor
                 cell.locationLabel.text = appointment.title
                 
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = .medium
-                dateFormatter.timeStyle = .none
-                cell.dateLabel.text = dateFormatter.string(from: appointment.apptDate!)
+                if let apptDate = appointment.apptDate {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = .medium
+                    dateFormatter.timeStyle = .none
+                    cell.dateLabel.text = dateFormatter.string(from: apptDate)
+                    
+                    let timeFormatter = DateFormatter()
+                    timeFormatter.dateStyle = .none
+                    timeFormatter.timeStyle = .short
+                    cell.timeLabel.text = timeFormatter.string(from: apptDate)
                 
-                let timeFormatter = DateFormatter()
-                timeFormatter.dateStyle = .none
-                timeFormatter.timeStyle = .short
-                cell.timeLabel.text = timeFormatter.string(from: appointment.apptDate!)
+                }
                 return cell
             }
         case 2:

@@ -13,14 +13,12 @@ import Kinvey
 class HealthConcernCell: UITableViewCell {
     var healthConcern: HealthConcern?
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var discipline: UILabel!
-    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var discomfortLevel: UILabel!
     @IBOutlet weak var healthConcernImage: UIImageView!
     
     override func layoutSubviews() {
         name.text = healthConcern?.name
-        discipline.text = healthConcern?.discomfort
-        address.text = healthConcern?.pcpEmail
+        discomfortLevel.text = healthConcern?.discomfort
         
         if let src = healthConcern?.imageSource {
             self.loadImage(src)

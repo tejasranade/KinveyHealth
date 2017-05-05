@@ -17,6 +17,8 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     
     @IBOutlet weak var descText: UITextField!
     
+    @IBOutlet weak var discomfort: UISlider!
+    
     lazy var healthConcernStore:DataStore<HealthConcern> = {
         return DataStore<HealthConcern>.collection(.cache)
     }()
@@ -34,6 +36,8 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     @IBAction func submit(_ sender: AnyObject) {
         let concern = HealthConcern()
         concern.name = descText.text
+        concern.discomfort = String(discomfort.value)
+        
         healthConcernStore.save(concern) { item, error in
             self.dismiss(animated: true, completion: nil)
         }
