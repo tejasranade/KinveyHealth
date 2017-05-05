@@ -1510,12 +1510,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HealthConcernCell" rowHeight="140" id="udd-3d-DV6" userLabel="HealthConcernCell" customClass="HealthConcernCell" customModule="KinveyHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="udd-3d-DV6" id="QQo-BS-oN2">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="udd-3d-DV6" id="QQo-BS-oN2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-1u-K1C" userLabel="HealthConcernImage">
-                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="307.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-1u-K1C" userLabel="HealthConcernImage">
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="307.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="TXS-1u-K1C" secondAttribute="height" multiplier="1:1" id="Xqr-c5-MxS"/>
                                                     </constraints>
@@ -1528,20 +1528,14 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discipline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNq-va-40r" userLabel="Discipline">
-                                                    <rect key="frame" x="315" y="50" width="78" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Discomfort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNq-va-40r" userLabel="Discipline">
+                                                    <rect key="frame" x="327" y="50" width="90" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ShortDesc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSW-tj-Xe6" userLabel="Address">
-                                                    <rect key="frame" x="315" y="80" width="60" height="219.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdI-ft-5sA">
-                                                    <rect key="frame" x="315" y="8" width="60" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdI-ft-5sA">
+                                                    <rect key="frame" x="327" y="8" width="48" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1553,14 +1547,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="pdI-ft-5sA" secondAttribute="trailing" id="Rbk-BS-9El"/>
                                                 <constraint firstItem="TNq-va-40r" firstAttribute="top" secondItem="pdI-ft-5sA" secondAttribute="bottom" constant="20" id="S1W-iR-nCP"/>
                                                 <constraint firstItem="pdI-ft-5sA" firstAttribute="leading" secondItem="TXS-1u-K1C" secondAttribute="trailing" constant="8" id="YLk-DC-fJh"/>
-                                                <constraint firstItem="vSW-tj-Xe6" firstAttribute="top" secondItem="TNq-va-40r" secondAttribute="bottom" constant="8" id="axy-9B-Yl5"/>
                                                 <constraint firstItem="TXS-1u-K1C" firstAttribute="width" secondItem="QQo-BS-oN2" secondAttribute="width" multiplier="0.5" id="bFa-43-9RH"/>
                                                 <constraint firstItem="pdI-ft-5sA" firstAttribute="top" secondItem="QQo-BS-oN2" secondAttribute="top" constant="8" id="dhZ-eB-K9d"/>
                                                 <constraint firstItem="TXS-1u-K1C" firstAttribute="top" secondItem="QQo-BS-oN2" secondAttribute="top" id="jBk-dw-hyL"/>
-                                                <constraint firstAttribute="bottom" secondItem="vSW-tj-Xe6" secondAttribute="bottom" constant="8" id="lAm-cy-zUk"/>
-                                                <constraint firstItem="vSW-tj-Xe6" firstAttribute="leading" secondItem="TXS-1u-K1C" secondAttribute="trailing" constant="8" id="m1o-L1-XHw"/>
                                                 <constraint firstItem="TXS-1u-K1C" firstAttribute="leading" secondItem="QQo-BS-oN2" secondAttribute="leading" id="rgt-5m-loZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="vSW-tj-Xe6" secondAttribute="trailing" id="zzT-N7-Zbn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
@@ -1572,8 +1562,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="address" destination="vSW-tj-Xe6" id="QkE-gt-MY9"/>
-                                            <outlet property="discipline" destination="TNq-va-40r" id="pMd-Rt-lF9"/>
+                                            <outlet property="discomfortLevel" destination="TNq-va-40r" id="q7R-lS-Yrs"/>
                                             <outlet property="healthConcernImage" destination="TXS-1u-K1C" id="ky8-6r-l0g"/>
                                             <outlet property="name" destination="pdI-ft-5sA" id="NzR-Zc-HRV"/>
                                         </connections>
@@ -2869,6 +2858,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="t6v-31-urf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="790-7s-kOd" eventType="valueChanged" id="Zs6-Iv-2om"/>
