@@ -64,18 +64,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension Client {
-    func isNamedUser () -> Bool {
-        return activeUser != nil && activeUser?.username != "Guest"
-    }
-    
-    func realUserName() -> String? {
-        if let user = activeUser as? HealthUser {
-            return user.firstname
-        }
-        return activeUser?.username
-    }
-}
+//extension Client {
+//    func isNamedUser () -> Bool {
+//        return activeUser != nil && activeUser?.username != "Guest"
+//    }
+//    
+//    func realUserName() -> String? {
+//        if let user = activeUser as? HealthUser {
+//            return user.firstname
+//        }
+//        return activeUser?.username
+//    }
+//}
 
 extension UIView {
     

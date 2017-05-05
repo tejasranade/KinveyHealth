@@ -20,7 +20,7 @@ class AccountViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Kinvey.sharedClient.isNamedUser() {
+        if let _ = Kinvey.sharedClient.activeUser {
             self.dismiss(animated: true, completion: nil)
         }
     }

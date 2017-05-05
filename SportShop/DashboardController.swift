@@ -135,23 +135,25 @@ class DashboardCollectionViewController: UICollectionViewController {
             })
         }
         
-        let typesToRead = Set<HKObjectType>([
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
-//            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!,
-            HKObjectType.activitySummaryType()
-        ])
-        
-        healthKitStore.requestAuthorization(toShare: nil, read: typesToRead) { (succeed, error) in
-            if succeed {
-                self.loadSteps()
-                self.loadKCalBurned()
-                self.loadDistance()
-                self.loadExerciseTime()
+        else {
+            let typesToRead = Set<HKObjectType>([
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
+                //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.biologicalSex)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
+                HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!,
+                HKObjectType.activitySummaryType()
+                ])
+            
+            healthKitStore.requestAuthorization(toShare: nil, read: typesToRead) { (succeed, error) in
+                if succeed {
+                    self.loadSteps()
+                    self.loadKCalBurned()
+                    self.loadDistance()
+                    self.loadExerciseTime()
+                }
             }
         }
     }
