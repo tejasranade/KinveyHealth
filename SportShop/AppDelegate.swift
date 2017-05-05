@@ -91,3 +91,12 @@ extension UIView {
     }
     
 }
+
+extension UIViewController {
+    
+    @IBAction func leftButtonTapped(_ sender: Any) {
+        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.drawerController?.toggleLeftView()
+    }
+    
+}

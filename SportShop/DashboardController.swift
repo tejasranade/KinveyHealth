@@ -13,12 +13,8 @@ import HealthKit
 import Kinvey
 
 class DashboardController: UIViewController{
-    @IBOutlet var pieChart: PieChartView!
     
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
+    @IBOutlet var pieChart: PieChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,11 +98,6 @@ class DashboardCollectionViewController: UICollectionViewController {
     var appointments = [Appointment]()
     
     lazy var healthKitStore = HKHealthStore()
-    
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

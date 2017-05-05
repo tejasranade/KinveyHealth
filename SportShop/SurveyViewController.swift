@@ -49,11 +49,6 @@ class SurveyViewController: UIViewController {
         
         return ORKOrderedTask(identifier: "Consent Task", steps: steps)
     }()
-    
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -236,7 +236,6 @@
 				967197321EBCF7AC00414BCE /* Prescription.swift */,
 			);
 			name = ClinicalSummary;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		9691FD981EB7B48B00642E84 /* Documents */ = {
@@ -335,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */,
-				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				9654FCA71EB92A8700FCF5FD /* Appointments */,
 				9654FCA61EB92A3300FCF5FD /* HealthConcern */,
 				9691FDA21EB8CC3100642E84 /* Doctors */,
