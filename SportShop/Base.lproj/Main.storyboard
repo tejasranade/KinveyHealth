@@ -173,7 +173,7 @@
         <scene sceneID="jtX-zB-JWV">
             <objects>
                 <collectionViewController storyboardIdentifier="DashboardController" id="kh9-Rb-210" customClass="DashboardCollectionViewController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lg5-Cd-gFH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lg5-Cd-gFH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -722,7 +722,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TQy-Nf-Qia" id="0Li-Aq-WOy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cde-7A-afo">
@@ -1348,25 +1348,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4h6-ds-hCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1351" y="-862"/>
-        </scene>
-        <!--Clinical Summary-->
-        <scene sceneID="IHU-9p-lim">
-            <objects>
-                <viewController storyboardIdentifier="ClinicalSummaryController" id="iZc-0G-4cQ" userLabel="Clinical Summary" customClass="ClinicalSummaryController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="c9R-cM-N0O"/>
-                        <viewControllerLayoutGuide type="bottom" id="duA-oe-xwc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZLE-fD-s7n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Clinical Summary" id="0uS-VG-3Z1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Er-DE-EO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3359.1999999999998" y="-1628.6356821589206"/>
         </scene>
         <!--Doctor Details-->
         <scene sceneID="QHk-4b-dNA">
@@ -2844,18 +2825,47 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kJh-k8-Ug7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bwd-bO-ch8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Bwd-bO-ch8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="iZc-0G-4cQ" kind="relationship" relationship="rootViewController" id="6S2-vT-mhH"/>
+                        <segue destination="790-7s-kOd" kind="relationship" relationship="rootViewController" id="jg5-2e-Ow4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4P-9s-PQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2420" y="-1628.6356821589206"/>
+        </scene>
+        <!--Clinical Summary Controller-->
+        <scene sceneID="Pv9-cV-zEi">
+            <objects>
+                <tableViewController storyboardIdentifier="ClinicalSummaryController" id="790-7s-kOd" customClass="ClinicalSummaryController" customModule="KinveyHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="N9h-8x-af2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GVG-C6-yMk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GVG-C6-yMk" id="mWv-zk-wjY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="790-7s-kOd" id="GkJ-ky-Xmt"/>
+                            <outlet property="delegate" destination="790-7s-kOd" id="kLa-Ff-xm9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HgJ-dG-q6L"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmk-sf-xdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="-1629"/>
         </scene>
     </scenes>
     <resources>

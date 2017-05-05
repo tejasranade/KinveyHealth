@@ -312,7 +312,6 @@
 		96B01EE01E39237F00E2CFE1 = {
 			isa = PBXGroup;
 			children = (
-				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				96B01EEB1E39237F00E2CFE1 /* KinveyHealth */,
 				96B01F001E39237F00E2CFE1 /* KinveyHealthTests */,
 				96B01F0B1E39237F00E2CFE1 /* KinveyHealthUITests */,
@@ -335,7 +334,6 @@
 		96B01EEB1E39237F00E2CFE1 /* KinveyHealth */ = {
 			isa = PBXGroup;
 			children = (
-				57F4F1AC1EBBFCA600CDDAA8 /* Survey */,
 				57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */,
 				9654FCA71EB92A8700FCF5FD /* Appointments */,
 				9654FCA61EB92A3300FCF5FD /* HealthConcern */,
@@ -348,6 +346,8 @@
 				9692A5951E3B0A0700EBEC23 /* LeftMenu */,
 				9692A5901E3AE3BD00EBEC23 /* Support */,
 				9692A58A1E3A7BD100EBEC23 /* Account */,
+				57F4F1AC1EBBFCA600CDDAA8 /* Survey */,
+				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				9692A57D1E398DAE00EBEC23 /* AppNavigationDrawerController.swift */,
 				96B01EEC1E39237F00E2CFE1 /* AppDelegate.swift */,
 				96B01EF01E39237F00E2CFE1 /* Main.storyboard */,
