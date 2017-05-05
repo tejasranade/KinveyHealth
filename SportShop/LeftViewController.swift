@@ -33,8 +33,8 @@ import Material
 import Kinvey
 
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Dashboard", "Documents", "Appointments", "Find a Doctor", "Health Team", "Telemedicine", "ID Card", "Support"]
-    let menuControllers = ["DashboardController", "DocumentsController", "ApptController", "FindDoctorController", "HealthTeamController", "HealthConcernsController", "IDController", "SupportViewController"]
+    let menuItems = ["Dashboard", "Documents", "Appointments", "Clinical Summary", "Find a Doctor", "Health Team", "Telemedicine", "ID Card", "Support"]
+    let menuControllers = ["DashboardController", "DocumentsController", "ApptController", "ClinicalSummaryController", "FindDoctorController", "HealthTeamController", "HealthConcernsController", "IDController", "SupportViewController"]
     
     @IBOutlet weak var welcomeMsg: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -83,7 +83,11 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
             let name = Kinvey.sharedClient.realUserName() {
             welcomeMsg.text = "Welcome, \(name)!"
         } else {
-            welcomeMsg.text = "Welcome, Guest!"
+            //welcomeMsg.text = "Welcome, Guest!"
+            let login = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController
+            present(login, animated: true, completion: {
+                print("login presented")
+            })
         }
         
         if let user = Kinvey.sharedClient.activeUser as? HealthUser,
@@ -92,7 +96,6 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             profileImage.image = UIImage(named:"anon")
         }
-        
     }
     
     func loadImage (_ src: String) {

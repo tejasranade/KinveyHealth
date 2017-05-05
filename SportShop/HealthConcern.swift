@@ -15,7 +15,8 @@ class HealthConcern: Entity {
     var name: String?
     var discomfort: String?
     var imageSource: String?
-    var patientName: String?
+    var pcpEmail: String?
+    //var patientName: String?
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
@@ -31,6 +32,7 @@ class HealthConcern: Entity {
         name <- map["healthconcern"]
         discomfort <- map["discomfort"]
         imageSource <- map["concernpic"]
-        patientName <- map["patientName"]
+        pcpEmail <- map["pcpemail"]
+        //patientName <- map["patientName"]
     }
 }

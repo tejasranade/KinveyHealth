@@ -16,6 +16,7 @@ class HealthUser: User {
     var imageSource:String?
     var firstname: String?
     var lastname: String?
+    var pcp: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -23,5 +24,6 @@ class HealthUser: User {
         imageSource <- map["imageSource"]
         firstname <- map["first_name"]
         lastname <- map["last_name"]
+        pcp <- map["pcp"]
     }
 }

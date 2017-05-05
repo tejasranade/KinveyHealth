@@ -22,6 +22,7 @@
 		9654FCA31EB91CD300FCF5FD /* HealthConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */; };
 		9654FCA51EB9252F00FCF5FD /* IDCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA41EB9252F00FCF5FD /* IDCard.swift */; };
 		9654FCA91EB92A9400FCF5FD /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9654FCA81EB92A9400FCF5FD /* Appointment.swift */; };
+		9671972F1EBCCA8A00414BCE /* ClinicalSummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */; };
 		9674CF791E3D36D100666968 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9674CF781E3D36D100666968 /* SignupController.swift */; };
 		9691FD9A1EB7B4AE00642E84 /* DocumentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD991EB7B4AE00642E84 /* DocumentsController.swift */; };
 		9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */; };
@@ -91,6 +92,7 @@
 		9654FCA21EB91CD300FCF5FD /* HealthConcern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthConcern.swift; sourceTree = "<group>"; };
 		9654FCA41EB9252F00FCF5FD /* IDCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCard.swift; sourceTree = "<group>"; };
 		9654FCA81EB92A9400FCF5FD /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClinicalSummaryController.swift; sourceTree = "<group>"; };
 		9674CF781E3D36D100666968 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		9691FD991EB7B4AE00642E84 /* DocumentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentsController.swift; sourceTree = "<group>"; };
 		9691FD9B1EB7C0FC00642E84 /* DocumentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			name = Appointments;
 			sourceTree = "<group>";
 		};
+		9671972D1EBCCA7000414BCE /* ClinicalSummary */ = {
+			isa = PBXGroup;
+			children = (
+				9671972E1EBCCA8A00414BCE /* ClinicalSummaryController.swift */,
+			);
+			name = ClinicalSummary;
+			sourceTree = "<group>";
+		};
 		9691FD981EB7B48B00642E84 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +302,7 @@
 		96B01EE01E39237F00E2CFE1 = {
 			isa = PBXGroup;
 			children = (
+				9671972D1EBCCA7000414BCE /* ClinicalSummary */,
 				96B01EEB1E39237F00E2CFE1 /* KinveyHealth */,
 				96B01F001E39237F00E2CFE1 /* KinveyHealthTests */,
 				96B01F0B1E39237F00E2CFE1 /* KinveyHealthUITests */,
@@ -655,6 +666,7 @@
 				9625D0B21EB78A63002E6BAA /* DashboardController.swift in Sources */,
 				962A6C721EBA675A007D4A46 /* SubmitHealthConcernController.swift in Sources */,
 				9692A5821E39AEA900EBEC23 /* AccountViewController.swift in Sources */,
+				9671972F1EBCCA8A00414BCE /* ClinicalSummaryController.swift in Sources */,
 				9691FDA11EB7DD0800642E84 /* IDController.swift in Sources */,
 				9691FDA91EB9060F00642E84 /* HealthTeamController.swift in Sources */,
 				9692A5921E3AE41D00EBEC23 /* SupportViewController.swift in Sources */,
