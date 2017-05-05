@@ -8,6 +8,7 @@ target 'KinveyHealth' do
   # Pods for KinveyHealth
   pod 'Material', '~> 2.0'
   pod 'Kinvey'
+  pod 'KinveyResearchKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
   pod 'YouTubePlayer'

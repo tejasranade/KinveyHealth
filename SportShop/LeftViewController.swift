@@ -33,8 +33,8 @@ import Material
 import Kinvey
 
 class LeftViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let menuItems = ["Dashboard", "Documents", "Find a Doctor", "Health Team", "Telemedicine", "ID Card", "Support"]
-    let menuControllers = ["DashboardController", "DocumentsController", "FindDoctorController", "HealthTeamController", "HealthConcernsController", "IDController", "SupportViewController"]
+    let menuItems = ["Dashboard", "Documents", "Find a Doctor", "Health Team", "Telemedicine", "ID Card", "Take a survey", "Support"]
+    let menuControllers = ["DashboardController", "DocumentsController", "FindDoctorController", "HealthTeamController", "HealthConcernsController", "IDController", "SurveyViewController", "SupportViewController"]
     
     @IBOutlet weak var welcomeMsg: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
