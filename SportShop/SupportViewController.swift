@@ -17,12 +17,6 @@ class SupportViewController: UIViewController {
     lazy var feedbackStore:DataStore<Feedback> = {
         return DataStore<Feedback>.collection(.network)
     }()
-
-    
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
     
     @IBOutlet weak var reportBtn: UIButton!
     @IBOutlet weak var problemText: UITextView!

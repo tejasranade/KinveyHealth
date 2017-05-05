@@ -31,13 +31,6 @@ class AccountViewController: UIViewController, FBSDKLoginButtonDelegate {
         //if FBSDKAccessToken.current() == nil,
     }
     
-    
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-
-    }
-    
     @IBAction func login(_ sender: Any) {
         if let _ = userName.text, let _ = password.text {
 

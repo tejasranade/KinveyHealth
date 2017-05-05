@@ -18,11 +18,6 @@ class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDa
         return DataStore<Doctor>.collection(.cache)
     }()
     
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

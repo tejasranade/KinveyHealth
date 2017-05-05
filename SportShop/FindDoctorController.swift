@@ -34,11 +34,6 @@ class FindDoctorTableViewController: UITableViewController {
     @IBOutlet weak var acceptingNewPatientsSwitch: UISwitch!
     @IBOutlet weak var locationTextField: UITextField!
     
-    @IBAction func leftButtonTapped(_ sender: Any) {
-        let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.drawerController?.toggleLeftView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
