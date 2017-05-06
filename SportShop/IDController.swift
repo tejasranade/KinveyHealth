@@ -40,7 +40,12 @@ class IDController: UIViewController {
     
     func refreshView(card: IDCard){
         //subscriberName.text = card.subscriberName
-        subscriberName.text = Kinvey.sharedClient.activeUser?.username
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser{
+            subscriberName.text = user.fullName
+        } else {
+            subscriberName.text = Kinvey.sharedClient.activeUser?.username
+        }
+        
         subscriberNo.text = card.subscriberNo
         groupName.text = card.groupName
         groupNo.text = card.groupNo

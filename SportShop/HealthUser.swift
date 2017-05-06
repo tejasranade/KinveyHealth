@@ -17,6 +17,18 @@ class HealthUser: User {
     var firstname: String?
     var lastname: String?
     var pcp: String?
+    var sfId:String?
+    var redoxId:String?
+    var phone: String?
+    
+    var fullName:String? {
+        if let firstname = firstname, let lastname = lastname {
+            return "\(firstname) \(lastname)"
+        }
+        
+        return self.username
+    }
+    
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -25,5 +37,8 @@ class HealthUser: User {
         firstname <- map["first_name"]
         lastname <- map["last_name"]
         pcp <- map["pcp"]
+        sfId <- map["sf_id"]
+        redoxId <- map["redox_id"]
+        phone <- map["phone"]
     }
 }

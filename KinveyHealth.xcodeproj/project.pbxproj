@@ -51,6 +51,7 @@
 		96B01EF71E39237F00E2CFE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96B01EF51E39237F00E2CFE1 /* LaunchScreen.storyboard */; };
 		96B01F021E39237F00E2CFE1 /* KinveyHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B01F011E39237F00E2CFE1 /* KinveyHealthTests.swift */; };
 		96B01F0D1E39237F00E2CFE1 /* SportShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B01F0C1E39237F00E2CFE1 /* SportShopUITests.swift */; };
+		96B2588E1EBE5C4F006D7DB7 /* ScheduleApptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */; };
 		96E445FB1E403F1F0050523A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FA1E403F1F0050523A /* NotificationController.swift */; };
 		96E445FD1E4047080050523A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FC1E4047080050523A /* Activity.swift */; };
 		96E445FF1E404D6B0050523A /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FE1E404D6B0050523A /* ActivityManager.swift */; };
@@ -131,6 +132,7 @@
 		96B01F081E39237F00E2CFE1 /* KinveyHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinveyHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B01F0C1E39237F00E2CFE1 /* SportShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportShopUITests.swift; sourceTree = "<group>"; };
 		96B01F0E1E39237F00E2CFE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleApptController.swift; sourceTree = "<group>"; };
 		96E445FA1E403F1F0050523A /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		96E445FC1E4047080050523A /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		96E445FE1E404D6B0050523A /* ActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				9654FCA81EB92A9400FCF5FD /* Appointment.swift */,
 				961E02CA1EBBBD9200D0223D /* ApptController.swift */,
+				96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */,
 			);
 			name = Appointments;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				9691FDA91EB9060F00642E84 /* HealthTeamController.swift in Sources */,
 				9692A5921E3AE41D00EBEC23 /* SupportViewController.swift in Sources */,
 				96A6AB591E3EF54B0093C051 /* ProductsController.swift in Sources */,
+				96B2588E1EBE5C4F006D7DB7 /* ScheduleApptController.swift in Sources */,
 				9691FDAB1EB9068700642E84 /* DoctorCell.swift in Sources */,
 				961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */,
 				967197311EBCF79E00414BCE /* Immunization.swift in Sources */,

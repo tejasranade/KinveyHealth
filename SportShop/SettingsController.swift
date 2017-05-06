@@ -17,6 +17,7 @@ class SettingsController: UIViewController {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     
+    @IBOutlet weak var phoneNumber: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +25,7 @@ class SettingsController: UIViewController {
             email.text = user.email
             firstName.text = user.firstname
             lastName.text = user.lastname
+            phoneNumber.text = user.phone
         }
         
         
@@ -37,6 +39,7 @@ class SettingsController: UIViewController {
             user.email = email.text
             user.firstname = firstName.text
             user.lastname = lastName.text
+            user.phone = phoneNumber.text
             //user.save()
         }
     }

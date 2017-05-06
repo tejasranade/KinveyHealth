@@ -245,7 +245,8 @@ class DashboardCollectionViewController: UICollectionViewController {
         case 1:
             return 1 + appointments.count
         case 2:
-            return 2
+//            return 2
+            return 0
         default:
             return 0
         }
@@ -319,25 +320,25 @@ class DashboardCollectionViewController: UICollectionViewController {
                 }
                 return cell
             }
-        case 2:
-            switch indexPath.item {
-            case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Tracker", for: indexPath)
-                return cell
-            default:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Chart", for: indexPath) as! ExpenseChartCollectionViewCell
-                let data: [(String, Double)] = [
-                    ("Jan", 35),
-                    ("Feb", 20),
-                    ("Mar", 50),
-                    ("Apr", 12.5),
-                    ("May", 12.5),
-                    ("Jun", 25),
-                    ("Jul", 37.5)
-                ]
-                cell.data = data
-                return cell
-            }
+//        case 2:
+//            switch indexPath.item {
+//            case 0:
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Tracker", for: indexPath)
+//                return cell
+//            default:
+//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Chart", for: indexPath) as! ExpenseChartCollectionViewCell
+//                let data: [(String, Double)] = [
+//                    ("Jan", 35),
+//                    ("Feb", 20),
+//                    ("Mar", 50),
+//                    ("Apr", 12.5),
+//                    ("May", 12.5),
+//                    ("Jun", 25),
+//                    ("Jul", 37.5)
+//                ]
+//                cell.data = data
+//                return cell
+//            }
         default:
             fatalError()
         }
@@ -406,151 +407,151 @@ class AppointmentCollectionViewCell: UICollectionViewCell {
     
 }
 
-class ExpenseChartCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var value1Label: UILabel!
-    @IBOutlet weak var value2Label: UILabel!
-    @IBOutlet weak var value3Label: UILabel!
-    @IBOutlet weak var value4Label: UILabel!
-    @IBOutlet weak var value5Label: UILabel!
-    
-    lazy var valueLabels: [UILabel] = {
-        return [
-            self.value5Label,
-            self.value4Label,
-            self.value3Label,
-            self.value2Label,
-            self.value1Label
-        ]
-    }()
-    
-    @IBOutlet weak var month1Label: UILabel!
-    @IBOutlet weak var month2Label: UILabel!
-    @IBOutlet weak var month3Label: UILabel!
-    @IBOutlet weak var month4Label: UILabel!
-    @IBOutlet weak var month5Label: UILabel!
-    @IBOutlet weak var month6Label: UILabel!
-    @IBOutlet weak var month7Label: UILabel!
-    
-    lazy var monthLabels: [UILabel] = {
-        return [
-            self.month1Label,
-            self.month2Label,
-            self.month3Label,
-            self.month4Label,
-            self.month5Label,
-            self.month6Label,
-            self.month7Label
-        ]
-    }()
-    
-    @IBOutlet weak var bar1LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar2LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar3LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar4LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar5LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar6LayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bar7LayoutConstraint: NSLayoutConstraint!
-    
-    subscript(index: Int) -> NSLayoutConstraint {
-        get {
-            switch index {
-            case 0:
-                return bar1LayoutConstraint
-            case 1:
-                return bar2LayoutConstraint
-            case 2:
-                return bar3LayoutConstraint
-            case 3:
-                return bar4LayoutConstraint
-            case 4:
-                return bar5LayoutConstraint
-            case 5:
-                return bar6LayoutConstraint
-            case 6:
-                return bar7LayoutConstraint
-            default:
-                fatalError()
-            }
-        }
-        set {
-            switch index {
-            case 0:
-                bar1LayoutConstraint = newValue
-            case 1:
-                bar2LayoutConstraint = newValue
-            case 2:
-                bar3LayoutConstraint = newValue
-            case 3:
-                bar4LayoutConstraint = newValue
-            case 4:
-                bar5LayoutConstraint = newValue
-            case 5:
-                bar6LayoutConstraint = newValue
-            case 6:
-                bar7LayoutConstraint = newValue
-            default:
-                fatalError()
-            }
-        }
-    }
-    
-    @IBOutlet weak var bar1View: UIView!
-    @IBOutlet weak var bar2View: UIView!
-    @IBOutlet weak var bar3View: UIView!
-    @IBOutlet weak var bar4View: UIView!
-    @IBOutlet weak var bar5View: UIView!
-    @IBOutlet weak var bar6View: UIView!
-    @IBOutlet weak var bar7View: UIView!
-    
-    lazy var barViews: [UIView] = {
-        return [
-            self.bar1View,
-            self.bar2View,
-            self.bar3View,
-            self.bar4View,
-            self.bar5View,
-            self.bar6View,
-            self.bar7View
-        ]
-    }()
-    
-    var data = [(String, Double)]() {
-        didSet {
-            guard data.count == 7 else {
-                fatalError("data must have 7 items")
-            }
-            
-            let maxValue = data.map { (_, value) in
-                return value
-            }.max()!
-            let bracketIncremental = Int(round((maxValue / 5) / 5) * 5)
-            
-            for (i, valueLabel) in valueLabels.enumerated() {
-                valueLabel.text = String((i + 1) * bracketIncremental)
-            }
-            
-            for ((key, _), monthLabel) in zip(data, monthLabels) {
-                monthLabel.text = key.uppercased()
-            }
-            
-            for (i, ((_, value), barView)) in zip(data, barViews).enumerated() {
-                let barLayoutConstraint = self[i]
-                let newBarLayoutConstraint = NSLayoutConstraint(
-                    item: barLayoutConstraint.firstItem,
-                    attribute: barLayoutConstraint.firstAttribute,
-                    relatedBy: barLayoutConstraint.relation,
-                    toItem: barLayoutConstraint.secondItem,
-                    attribute: barLayoutConstraint.secondAttribute,
-                    multiplier: CGFloat(value / maxValue),
-                    constant: barLayoutConstraint.constant
-                )
-                let superview = barView.superview!
-                superview.removeConstraint(barLayoutConstraint)
-                superview.addConstraint(newBarLayoutConstraint)
-                self[i] = newBarLayoutConstraint
-            }
-        }
-    }
-    
-}
+//class ExpenseChartCollectionViewCell: UICollectionViewCell {
+//    
+//    @IBOutlet weak var value1Label: UILabel!
+//    @IBOutlet weak var value2Label: UILabel!
+//    @IBOutlet weak var value3Label: UILabel!
+//    @IBOutlet weak var value4Label: UILabel!
+//    @IBOutlet weak var value5Label: UILabel!
+//    
+//    lazy var valueLabels: [UILabel] = {
+//        return [
+//            self.value5Label,
+//            self.value4Label,
+//            self.value3Label,
+//            self.value2Label,
+//            self.value1Label
+//        ]
+//    }()
+//    
+//    @IBOutlet weak var month1Label: UILabel!
+//    @IBOutlet weak var month2Label: UILabel!
+//    @IBOutlet weak var month3Label: UILabel!
+//    @IBOutlet weak var month4Label: UILabel!
+//    @IBOutlet weak var month5Label: UILabel!
+//    @IBOutlet weak var month6Label: UILabel!
+//    @IBOutlet weak var month7Label: UILabel!
+//    
+//    lazy var monthLabels: [UILabel] = {
+//        return [
+//            self.month1Label,
+//            self.month2Label,
+//            self.month3Label,
+//            self.month4Label,
+//            self.month5Label,
+//            self.month6Label,
+//            self.month7Label
+//        ]
+//    }()
+//    
+//    @IBOutlet weak var bar1LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar2LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar3LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar4LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar5LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar6LayoutConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var bar7LayoutConstraint: NSLayoutConstraint!
+//    
+//    subscript(index: Int) -> NSLayoutConstraint {
+//        get {
+//            switch index {
+//            case 0:
+//                return bar1LayoutConstraint
+//            case 1:
+//                return bar2LayoutConstraint
+//            case 2:
+//                return bar3LayoutConstraint
+//            case 3:
+//                return bar4LayoutConstraint
+//            case 4:
+//                return bar5LayoutConstraint
+//            case 5:
+//                return bar6LayoutConstraint
+//            case 6:
+//                return bar7LayoutConstraint
+//            default:
+//                fatalError()
+//            }
+//        }
+//        set {
+//            switch index {
+//            case 0:
+//                bar1LayoutConstraint = newValue
+//            case 1:
+//                bar2LayoutConstraint = newValue
+//            case 2:
+//                bar3LayoutConstraint = newValue
+//            case 3:
+//                bar4LayoutConstraint = newValue
+//            case 4:
+//                bar5LayoutConstraint = newValue
+//            case 5:
+//                bar6LayoutConstraint = newValue
+//            case 6:
+//                bar7LayoutConstraint = newValue
+//            default:
+//                fatalError()
+//            }
+//        }
+//    }
+//
+//    @IBOutlet weak var bar1View: UIView!
+//    @IBOutlet weak var bar2View: UIView!
+//    @IBOutlet weak var bar3View: UIView!
+//    @IBOutlet weak var bar4View: UIView!
+//    @IBOutlet weak var bar5View: UIView!
+//    @IBOutlet weak var bar6View: UIView!
+//    @IBOutlet weak var bar7View: UIView!
+//    
+//    lazy var barViews: [UIView] = {
+//        return [
+//            self.bar1View,
+//            self.bar2View,
+//            self.bar3View,
+//            self.bar4View,
+//            self.bar5View,
+//            self.bar6View,
+//            self.bar7View
+//        ]
+//    }()
+//    
+//    var data = [(String, Double)]() {
+//        didSet {
+//            guard data.count == 7 else {
+//                fatalError("data must have 7 items")
+//            }
+//            
+//            let maxValue = data.map { (_, value) in
+//                return value
+//            }.max()!
+//            let bracketIncremental = Int(round((maxValue / 5) / 5) * 5)
+//            
+//            for (i, valueLabel) in valueLabels.enumerated() {
+//                valueLabel.text = String((i + 1) * bracketIncremental)
+//            }
+//            
+//            for ((key, _), monthLabel) in zip(data, monthLabels) {
+//                monthLabel.text = key.uppercased()
+//            }
+//            
+//            for (i, ((_, value), barView)) in zip(data, barViews).enumerated() {
+//                let barLayoutConstraint = self[i]
+//                let newBarLayoutConstraint = NSLayoutConstraint(
+//                    item: barLayoutConstraint.firstItem,
+//                    attribute: barLayoutConstraint.firstAttribute,
+//                    relatedBy: barLayoutConstraint.relation,
+//                    toItem: barLayoutConstraint.secondItem,
+//                    attribute: barLayoutConstraint.secondAttribute,
+//                    multiplier: CGFloat(value / maxValue),
+//                    constant: barLayoutConstraint.constant
+//                )
+//                let superview = barView.superview!
+//                superview.removeConstraint(barLayoutConstraint)
+//                superview.addConstraint(newBarLayoutConstraint)
+//                self[i] = newBarLayoutConstraint
+//            }
+//        }
+//    }
+//    
+//}

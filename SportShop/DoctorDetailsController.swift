@@ -66,4 +66,10 @@ class DoctorDetailsController: UIViewController {
             //            }
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ScheduleApptController {
+            destination.doctor = self.doctor
+        }
+    }
+
 }
