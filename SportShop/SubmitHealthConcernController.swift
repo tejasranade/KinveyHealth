@@ -13,10 +13,10 @@ import Kinvey
 
 class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDelegate{
 
+    @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var descText: UITextField!
-    
+    @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var discomfort: UISlider!
     
     lazy var healthConcernStore:DataStore<HealthConcern> = {
@@ -35,7 +35,7 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
 
     @IBAction func submit(_ sender: AnyObject) {
         let concern = HealthConcern()
-        concern.name = descText.text
+        concern.name = descriptionText.text
         concern.discomfort = String(discomfort.value)
         
         healthConcernStore.save(concern) { item, error in
@@ -52,6 +52,7 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
         
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image
+        imageButton.isHidden = true
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

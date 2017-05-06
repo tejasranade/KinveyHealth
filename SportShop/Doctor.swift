@@ -20,7 +20,21 @@ class Doctor: Entity {
     dynamic var imageSource: String?
     dynamic var location: GeoPoint?
     dynamic var PostalCode: String?
-
+    dynamic var email: String?
+    
+    dynamic var city: String?
+    dynamic var street: String?
+    dynamic var zip: String?
+    dynamic var state: String?
+    
+    var addr2:String? {
+        if let city = city, let state = state, let zip = zip {
+            return city + " " + state + " " + zip
+        }
+        
+        return " "
+    }
+    
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
         return "doctors"
@@ -38,6 +52,12 @@ class Doctor: Entity {
         imageSource <- map["FullPhotoUrl"]
         location <- map["_geoloc"]
         PostalCode <- map["PostalCode"]
+        city <- map["city"]
+        street <- map["street"]
+        state <- map["state"]
+        zip <- map["zip"]
+        
+        email <- map["email"]
     }
     
 }

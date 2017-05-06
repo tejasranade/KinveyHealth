@@ -18,12 +18,8 @@ class HealthConcernsController: UIViewController, UITableViewDelegate, UITableVi
         return DataStore<HealthConcern>.collection(.cache)
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //let query = Query(format: "category == %@", "shoes")
-        
-        //healthConcernStore.find (query) { (items, error) in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         healthConcernStore.find () { (items, error) in
             if let items = items {
                 self.concerns = items
@@ -32,7 +28,13 @@ class HealthConcernsController: UIViewController, UITableViewDelegate, UITableVi
                 print ("\(String(describing: error))")
             }
         }
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        //let query = Query(format: "category == %@", "shoes")
+        
+        //healthConcernStore.find (query) { (items, error) in
         self.tableView.estimatedRowHeight = 140
         self.tableView.rowHeight = UITableViewAutomaticDimension
         

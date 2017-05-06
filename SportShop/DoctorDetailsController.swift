@@ -14,8 +14,12 @@ import Haneke
 class DoctorDetailsController: UIViewController {
     var doctor:Doctor?
     
+    @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var addr1: UILabel!
+    @IBOutlet weak var addr2: UILabel!
+    @IBOutlet weak var email: UILabel!
     //@IBOutlet weak var price: UILabel!
     @IBOutlet weak var doctorImage: UIImageView!
     
@@ -39,9 +43,12 @@ class DoctorDetailsController: UIViewController {
         
         self.title = doctor?.name
         
+        self.nameText.text = doctor?.name
         self.companyName.text = doctor?.companyName
         self.titleText.text = doctor?.title
-        //self.price.text = doctor?.priceString
+        self.addr1.text = doctor?.street
+        self.addr2.text = doctor?.addr2
+        self.email.text = doctor?.email
         
         if let src = doctor?.imageSource {
             let url = URL(string: src)
