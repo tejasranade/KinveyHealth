@@ -33,9 +33,16 @@ class DocumentsController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        self.tableView.estimatedRowHeight = 140
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = 64
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: animated)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +59,10 @@ class DocumentsController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DocumentDetailController,
-            let indexPath = self.tableView.indexPathForSelectedRow {
-            destination.document = files?[indexPath.row]
+            let indexPath = self.tableView.indexPathForSelectedRow,
+            let files = files
+        {
+            destination.document = files[indexPath.row]
         }
     }
 }

@@ -10,6 +10,7 @@
 		12424B40387BFB6AB66CA66C /* Pods_KinveyHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */; };
 		495AA2BED59F482A2C34F85F /* Pods_KinveyHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58AE36C1332C657566B91F3C /* Pods_KinveyHealthUITests.framework */; };
 		571BECF91EBAD06200DEA215 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571BECF81EBAD06200DEA215 /* RingView.swift */; };
+		57D8ECFB1EBD4EC200EFE9D3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D8ECFA1EBD4EC200EFE9D3 /* WebKit.framework */; };
 		57F4F1AB1EBBB17800CDDAA8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */; };
 		57F4F1AE1EBBFCBE00CDDAA8 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4F1AD1EBBFCBE00CDDAA8 /* SurveyViewController.swift */; };
 		961E02C71EBA894C00D0223D /* HealthConcernsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961E02C61EBA894C00D0223D /* HealthConcernsController.swift */; };
@@ -79,6 +80,7 @@
 		15A0F9BF306E76A6AAA0202F /* Pods-KinveyHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinveyHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KinveyHealthUITests/Pods-KinveyHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinveyHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		571BECF81EBAD06200DEA215 /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		57D8ECFA1EBD4EC200EFE9D3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		57F4F1A91EBBB0F100CDDAA8 /* KinveyHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinveyHealth.entitlements; sourceTree = SOURCE_ROOT; };
 		57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		57F4F1AD1EBBFCBE00CDDAA8 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D8ECFB1EBD4EC200EFE9D3 /* WebKit.framework in Frameworks */,
 				F1E0EE2D8506C73BB07592BB /* Pods_KinveyHealth.framework in Frameworks */,
 				57F4F1AB1EBBB17800CDDAA8 /* HealthKit.framework in Frameworks */,
 			);
@@ -191,6 +194,7 @@
 		9422CA11E122562E567F1230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57D8ECFA1EBD4EC200EFE9D3 /* WebKit.framework */,
 				57F4F1AA1EBBB17800CDDAA8 /* HealthKit.framework */,
 				D70CC66745BD47B319B452A6 /* Pods_KinveyHealth.framework */,
 				2258E935589FA4CA941F28B6 /* Pods_KinveyHealthTests.framework */,

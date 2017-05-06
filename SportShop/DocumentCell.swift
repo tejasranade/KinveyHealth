@@ -13,10 +13,21 @@ import Kinvey
 
 class DocumentCell: UITableViewCell {
     var file: File?
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 
     override func layoutSubviews() {
-        name.text = file?.fileName
+        nameLabel.text = file?.fileName
+        
+        
+        if let date = file?.metadata?.lastModifiedTime {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateLabel.text = dateFormatter.string(from: date)
+        } else {
+            dateLabel.text = nil
+        }
 //        
 //        if let src = product?.imageSource {
 //            self.loadImage(src)
