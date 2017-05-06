@@ -15,6 +15,7 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
 
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var prevTreated: UISwitch!
     
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var discomfort: UISlider!
@@ -36,7 +37,11 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     @IBAction func submit(_ sender: AnyObject) {
         let concern = HealthConcern()
         concern.name = descriptionText.text
-        concern.discomfort = String(discomfort.value)
+        concern.discomfort = String(Int(discomfort.value))
+        //concern.prevTreated = prevTreated.value
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+            concern.pcpEmail = user.pcp
+        }
         
         healthConcernStore.save(concern) { item, error in
             self.dismiss(animated: true, completion: nil)

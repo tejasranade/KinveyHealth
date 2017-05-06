@@ -16,6 +16,7 @@ class HealthConcern: Entity {
     var discomfort: String?
     var imageSource: String?
     var pcpEmail: String?
+    var prevTreated: Bool?
     //var patientName: String?
     
     override class func collectionName() -> String {
@@ -33,5 +34,6 @@ class HealthConcern: Entity {
         discomfort <- map["discomfort"]
         imageSource <- map["concernpic"]
         pcpEmail <- map["pcpemail"]
+        prevTreated <- map["previouslytreated"]
     }
 }

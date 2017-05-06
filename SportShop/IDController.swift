@@ -19,6 +19,7 @@ class IDController: UIViewController {
     @IBOutlet weak var planName: UILabel!
     @IBOutlet weak var issueDate: UILabel!
     @IBOutlet weak var officeCopay: UILabel!
+    @IBOutlet weak var prevCopay: UILabel!
     
     lazy var idStore:DataStore<IDCard> = {
         return DataStore<IDCard>.collection(.cache)
@@ -45,6 +46,12 @@ class IDController: UIViewController {
         groupNo.text = card.groupNo
         planName.text = card.plan
         issueDate.text = card.issueDate
-        officeCopay.text = card.officeCopay
+        if let offCopay = card.officeCopay {
+            officeCopay.text = "$\(offCopay)"
+        }
+
+        if let specCopay = card.specialistCopay {
+            prevCopay.text = "$\(specCopay)"
+        }
     }
 }

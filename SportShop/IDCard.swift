@@ -51,7 +51,7 @@ class IDCard: Entity {
         issueDate <- map["issuedate"]
 
         officeCopay <- map["officecopay"]
-        specialistCopay <- map["specialist"]
+        specialistCopay <- map["speccopay"]
 //        prevCopay <- map["preventative"]
 //        emerCopay <- map["emergency"]
 //        urgentCopay <- map["urgent"]
