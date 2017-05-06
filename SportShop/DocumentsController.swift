@@ -21,12 +21,15 @@ class DocumentsController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let query = Query(format: "category == %@", "shoes")
-        //let query = Query(format: "healthconcern == false")
-        //fileStore.find (query) { (items, error) in
         fileStore.find () { (items, error) in
             if let items = items {
-                self.files = items
+                var result = [File]()
+                for item in items{
+                    if (item.fileName?.hasSuffix(".pdf"))! {
+                        result.append(item)
+                    }
+                }
+                self.files = result
                 self.tableView.reloadData()
             } else {
                 print ("\(String(describing: error))")
