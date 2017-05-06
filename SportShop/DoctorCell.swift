@@ -13,14 +13,14 @@ import Kinvey
 class DoctorCell: UITableViewCell {
     var doctor: Doctor?
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var discipline: UILabel!
-    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var titleText: UILabel!
+    @IBOutlet weak var company: UILabel!
     @IBOutlet weak var doctorImage: UIImageView!
     
     override func layoutSubviews() {
         name.text = doctor?.name
-        discipline.text = doctor?.companyName
-        address.text = doctor?.aboutme
+        titleText.text = doctor?.title
+        company.text = doctor?.companyName
         
         if let src = doctor?.imageSource {
             self.loadImage(src)

@@ -15,7 +15,7 @@ class DoctorDetailsController: UIViewController {
     var doctor:Doctor?
     
     @IBOutlet weak var companyName: UILabel!
-    @IBOutlet weak var aboutme: UILabel!
+    @IBOutlet weak var titleText: UILabel!
     //@IBOutlet weak var price: UILabel!
     @IBOutlet weak var doctorImage: UIImageView!
     
@@ -40,7 +40,7 @@ class DoctorDetailsController: UIViewController {
         self.title = doctor?.name
         
         self.companyName.text = doctor?.companyName
-        self.aboutme.text = doctor?.aboutme
+        self.titleText.text = doctor?.title
         //self.price.text = doctor?.priceString
         
         if let src = doctor?.imageSource {
