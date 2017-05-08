@@ -101,8 +101,11 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     func updateUser(){
-        if let user = Kinvey.sharedClient.activeUser {
-            welcomeMsg.text = "Welcome, \(String(describing: user.username!))!"
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+            if let fn = user.firstname {
+                welcomeMsg.text = "Welcome, \(fn))!"
+            }
+            
         } else {
             welcomeMsg.text = ""
             let login = self.storyboard?.instantiateViewController(withIdentifier: "AccountViewController") as! AccountViewController

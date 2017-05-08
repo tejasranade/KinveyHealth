@@ -1780,6 +1780,11 @@
                                 <action selector="leftButtonTapped:" destination="ejM-u3-WtZ" id="J8Y-F9-YDf"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="TCX-Ad-Itb">
+                            <connections>
+                                <segue destination="53w-oL-pP0" kind="show" id="abF-vh-I23"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2Dt-Dg-acm" id="iab-Ix-40q"/>
@@ -3401,4 +3406,7 @@ IAogA
         <image name="qr-code" width="150" height="150"/>
         <image name="steps" width="34" height="34"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="abF-vh-I23"/>
+    </inferredMetricsTieBreakers>
 </document>

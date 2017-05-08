@@ -21,9 +21,6 @@ class HealthTeamController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let query = Query(format: "category == %@", "shoes")
-        
-        //doctorStore.find (query) { (items, error) in
         doctorStore.find () { (items, error) in
             if let items = items {
                 self.doctors = items
