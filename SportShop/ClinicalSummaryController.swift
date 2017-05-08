@@ -13,8 +13,8 @@ import PromiseKit
 
 class ClinicalSummaryController: UITableViewController {
     
-    lazy var prescriptionDataStore = DataStore<Prescription>.collection(.network)
-    lazy var immunizationDataStore = DataStore<Immunization>.collection(.network)
+    lazy var prescriptionDataStore = DataStore<Prescription>.collection(.cache)
+    lazy var immunizationDataStore = DataStore<Immunization>.collection(.cache)
     
     enum Section: Int {
         case prescription = 0

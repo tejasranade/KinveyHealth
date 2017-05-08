@@ -15,6 +15,8 @@ class Appointment: Entity {
     var doctor: String?
     var title: String?
     var apptDate: Date?
+    var doctorId: String?
+    var patientId: String?
 
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
@@ -29,6 +31,8 @@ class Appointment: Entity {
         //<member variable> <- ("<backend property>", map["<backend property>"])
         doctor <- map["doctor"]
         title <- map["type"]
+        patientId <- map["patientId"]
+        doctorId <- map["doctorId"]
         apptDate <- (map["apptDate"], KinveyDateTransform())
     }
     

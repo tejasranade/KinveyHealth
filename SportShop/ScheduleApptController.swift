@@ -31,9 +31,13 @@ class ScheduleApptController: UIViewController {
         appt.title = descText.text
         appt.apptDate = apptDatePicker.date
         appt.doctor = doctor?.name
+        appt.doctorId = doctor?.entityId
+    
+        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+            appt.patientId = user.sfId
+        }
         apptStore.save(appt) {savedAppt, error in
             self.showConfirmation()
-            self.dismiss(animated: true)
         }
     }
     
@@ -43,7 +47,9 @@ class ScheduleApptController: UIViewController {
         
         let when = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: when){
-            alert.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true, completion: { 
+                self.dismiss(animated: true)
+            })
         }
     }
 

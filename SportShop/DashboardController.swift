@@ -106,20 +106,6 @@ class DashboardCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        let pageOne = Query {
-            $0.limit = 3
-        }
-
-        apptStore.find (pageOne) { (items, error) in
-            if let items = items {
-                self.appointments = items
-                self.collectionView?.reloadData()
-            } else {
-                print ("\(String(describing: error))")
-            }
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,6 +120,21 @@ class DashboardCollectionViewController: UICollectionViewController {
         }
         
         else {
+            
+            
+            let pageOne = Query {
+                $0.limit = 3
+            }
+            
+            apptStore.find (pageOne) { (items, error) in
+                if let items = items {
+                    self.appointments = items
+                    self.collectionView?.reloadSections(IndexSet(integer: 1))
+                } else {
+                    print ("\(String(describing: error))")
+                }
+            }
+
             let typesToRead = Set<HKObjectType>([
                 //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
                 //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,

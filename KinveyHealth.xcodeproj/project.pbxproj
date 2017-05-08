@@ -52,6 +52,7 @@
 		96B01F021E39237F00E2CFE1 /* KinveyHealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B01F011E39237F00E2CFE1 /* KinveyHealthTests.swift */; };
 		96B01F0D1E39237F00E2CFE1 /* SportShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B01F0C1E39237F00E2CFE1 /* SportShopUITests.swift */; };
 		96B2588E1EBE5C4F006D7DB7 /* ScheduleApptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */; };
+		96B258901EBFDF88006D7DB7 /* AppointmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B2588F1EBFDF88006D7DB7 /* AppointmentCell.swift */; };
 		96E445FB1E403F1F0050523A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FA1E403F1F0050523A /* NotificationController.swift */; };
 		96E445FD1E4047080050523A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FC1E4047080050523A /* Activity.swift */; };
 		96E445FF1E404D6B0050523A /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E445FE1E404D6B0050523A /* ActivityManager.swift */; };
@@ -133,6 +134,7 @@
 		96B01F0C1E39237F00E2CFE1 /* SportShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportShopUITests.swift; sourceTree = "<group>"; };
 		96B01F0E1E39237F00E2CFE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleApptController.swift; sourceTree = "<group>"; };
+		96B2588F1EBFDF88006D7DB7 /* AppointmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentCell.swift; sourceTree = "<group>"; };
 		96E445FA1E403F1F0050523A /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		96E445FC1E4047080050523A /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		96E445FE1E404D6B0050523A /* ActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityManager.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				9654FCA81EB92A9400FCF5FD /* Appointment.swift */,
 				961E02CA1EBBBD9200D0223D /* ApptController.swift */,
 				96B2588D1EBE5C4F006D7DB7 /* ScheduleApptController.swift */,
+				96B2588F1EBFDF88006D7DB7 /* AppointmentCell.swift */,
 			);
 			name = Appointments;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				961E02CD1EBBBF3C00D0223D /* DoctorDetailsController.swift in Sources */,
 				9674CF791E3D36D100666968 /* SignupController.swift in Sources */,
 				9691FDA41EB8CC4500642E84 /* FindDoctorController.swift in Sources */,
+				96B258901EBFDF88006D7DB7 /* AppointmentCell.swift in Sources */,
 				96A6AB5D1E3F993A0093C051 /* ProductCell.swift in Sources */,
 				96B01EED1E39237F00E2CFE1 /* AppDelegate.swift in Sources */,
 				9691FD9C1EB7C0FC00642E84 /* DocumentCell.swift in Sources */,
