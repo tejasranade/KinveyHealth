@@ -102,7 +102,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func updateUser(){
         if let user = Kinvey.sharedClient.activeUser as? HealthUser {
-            if let fn = user.firstName {
+            if let fn = user.firstname {
                 welcomeMsg.text = "Welcome, \(fn))!"
             }
             
