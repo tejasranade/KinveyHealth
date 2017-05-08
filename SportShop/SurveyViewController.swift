@@ -49,6 +49,23 @@ class SurveyViewController: UIViewController {
         
         return ORKOrderedTask(identifier: "Consent Task", steps: steps)
     }()
+    
+    lazy var surveyTask: ORKTask = {
+        let instructionStep = ORKInstructionStep(identifier: "Survey Instruction")
+        instructionStep.title = "Instructions"
+        instructionStep.text = "Please fill the survey with the best of your knowledge."
+        
+        let summaryStep = ORKInstructionStep(identifier: "Suvery Summary")
+        summaryStep.title = NSLocalizedString("Thanks", comment: "")
+        summaryStep.text = NSLocalizedString("Thank you for participating in this survey.", comment: "")
+        
+        return ORKOrderedTask(identifier: "Survey", steps: [
+            instructionStep,
+            ORKQuestionStep(identifier: "Question Feeling Better", title: "Are you feeeling better today?", answer: ORKBooleanAnswerFormat()),
+            ORKQuestionStep(identifier: "Question Describe", title: "Describe how are you feeling today?", answer: ORKTextAnswerFormat()),
+            summaryStep
+        ])
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +78,18 @@ class SurveyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func submitConsent(_ sender: Any) {
+    @IBAction func submitConsent(_ sender: UIButton) {
         let taskViewController = ORKTaskViewController(task: consentTask, taskRun: nil)
         taskViewController.delegate = self
         present(taskViewController, animated: true)
     }
 
+    @IBAction func takeSurvey(_ sender: UIButton) {
+        let taskViewController = ORKTaskViewController(task: surveyTask, taskRun: nil)
+        taskViewController.delegate = self
+        present(taskViewController, animated: true)
+    }
+    
 }
 
 extension SurveyViewController: ORKTaskViewControllerDelegate {
