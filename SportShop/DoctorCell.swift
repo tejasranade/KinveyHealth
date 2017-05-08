@@ -19,7 +19,7 @@ class DoctorCell: UITableViewCell {
     
     override func layoutSubviews() {
         name.text = doctor?.name
-        titleText.text = doctor?.title
+        titleText.text = doctor?.role
         company.text = doctor?.companyName
         
         if let src = doctor?.imageSource {

@@ -15,7 +15,7 @@ import MapKit
 class Doctor: Entity {
     
     dynamic var name: String?
-    dynamic var title: String?
+    dynamic var role: String?
     dynamic var companyName: String?
     dynamic var imageSource: String?
     dynamic var location: GeoPoint?
@@ -47,7 +47,7 @@ class Doctor: Entity {
         //Each property in your entity should be mapped using the following scheme:
         //<member variable> <- ("<backend property>", map["<backend property>"])
         name <- map["name"]
-        title <- map["title"]
+        role <- ("roles", map["title"])
         companyName <- map["companyName"]
         imageSource <- map["FullPhotoUrl"]
         location <- ("location", map["_geoloc"])
@@ -72,8 +72,12 @@ extension Doctor: MKAnnotation {
         return CLLocationCoordinate2D(geoPoint: location)
     }
     
+    var title: String? {
+        return name
+    }
+    
     var subtitle: String? {
-        return companyName
+        return role
     }
     
 }

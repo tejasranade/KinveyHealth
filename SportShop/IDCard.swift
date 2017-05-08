@@ -24,10 +24,47 @@ class IDCard: Entity {
 
     dynamic var officeCopay: String?
     dynamic var specialistCopay: String?
-//    dynamic var prevCopay: String?
-//    dynamic var emerCopay: String?
-//    dynamic var urgentCopay: String?
     
+    dynamic var deductibleTotal: String?
+    dynamic var deductibleRemain: String?
+    
+    dynamic var deductibleFamilyTotal: String?
+    dynamic var deductibleFamilyRemain: String?
+    
+    
+    var individualUsed: Float {
+        if let total = deductibleTotal, let remain = deductibleRemain,
+            let iTotal = Float(total), let iRemain = Float(remain) {
+            return iTotal - iRemain
+        }
+        return 0
+    }
+    
+    var individualPercentUsed: Float {
+        if let total = deductibleTotal, let remain = deductibleRemain,
+            let fTotal = Float(total), let fRemain = Float(remain){
+            return (fTotal - fRemain)/fTotal
+        }
+        return 0
+    }
+
+    var familyUsed: Float {
+        if let total = deductibleFamilyTotal, let remain = deductibleFamilyRemain,
+            let iTotal = Float(total), let iRemain = Float(remain) {
+            return iTotal - iRemain
+        }
+        return 0
+    }
+
+    var familyPercentUsed: Float {
+        if let total = deductibleFamilyTotal, let remain = deductibleFamilyRemain,
+            let fTotal = Float(total), let fRemain = Float(remain){
+            return (fTotal - fRemain)/fTotal
+        }
+        return 0
+    }
+    
+
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity
         return "idcards"
@@ -52,9 +89,11 @@ class IDCard: Entity {
 
         officeCopay <- map["officecopay"]
         specialistCopay <- map["speccopay"]
-//        prevCopay <- map["preventative"]
-//        emerCopay <- map["emergency"]
-//        urgentCopay <- map["urgent"]
+        
+        deductibleTotal <- map["deductible_individual_total"]
+        deductibleRemain <- map["deductible_individual_remain"]
+        deductibleFamilyTotal <- map["deductible_family_total"]
+        deductibleFamilyRemain <- map["deductible_family_remain"]
     }
     
 }

@@ -63,10 +63,17 @@ class DashboardCollectionViewController: UICollectionViewController {
     lazy var distanceIndexPath = IndexPath(item: 2, section: 0)
     lazy var exerciseTimeIndexPath = IndexPath(item: 3, section: 0)
     
+    lazy var deductiblesTitleIndexPath = IndexPath(item: 0, section: 2)
+    lazy var individualDeductibleIndexPath = IndexPath(item: 1, section: 2)
+    lazy var familyDeductibleIndexPath = IndexPath(item: 2, section: 2)
+    
     lazy var apptStore:DataStore<Appointment> = {
         return DataStore<Appointment>.collection(.cache)
     }()
 
+    lazy var idcardStore:DataStore<IDCard> = {
+        return DataStore<IDCard>.collection(.cache)
+    }()
     
     var steps = 0 {
         didSet {
@@ -101,6 +108,7 @@ class DashboardCollectionViewController: UICollectionViewController {
     }
     
     var appointments = [Appointment]()
+    var idcard:IDCard?
     
     lazy var healthKitStore = HKHealthStore()
     
@@ -120,8 +128,6 @@ class DashboardCollectionViewController: UICollectionViewController {
         }
         
         else {
-            
-            
             let pageOne = Query {
                 $0.limit = 3
             }
@@ -134,7 +140,17 @@ class DashboardCollectionViewController: UICollectionViewController {
                     print ("\(String(describing: error))")
                 }
             }
-
+            
+            idcardStore.find () { (items, error) in
+                if let items = items,
+                    items.count > 0 {
+                    self.idcard = items[0]
+                    self.collectionView?.reloadSections(IndexSet(integer: 2))
+                } else {
+                    print ("\(String(describing: error))")
+                }
+            }
+            
             let typesToRead = Set<HKObjectType>([
                 //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!,
                 //            HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.bloodType)!,
@@ -246,8 +262,8 @@ class DashboardCollectionViewController: UICollectionViewController {
         case 1:
             return 1 + appointments.count
         case 2:
-//            return 2
-            return 0
+            return 3
+            //return 0
         default:
             return 0
         }
@@ -321,25 +337,40 @@ class DashboardCollectionViewController: UICollectionViewController {
                 }
                 return cell
             }
-//        case 2:
-//            switch indexPath.item {
-//            case 0:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Tracker", for: indexPath)
-//                return cell
-//            default:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expense Chart", for: indexPath) as! ExpenseChartCollectionViewCell
-//                let data: [(String, Double)] = [
-//                    ("Jan", 35),
-//                    ("Feb", 20),
-//                    ("Mar", 50),
-//                    ("Apr", 12.5),
-//                    ("May", 12.5),
-//                    ("Jun", 25),
-//                    ("Jul", 37.5)
-//                ]
-//                cell.data = data
-//                return cell
-//            }
+        case 2:
+            
+            switch indexPath {
+            case deductiblesTitleIndexPath:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Deductibles", for: indexPath)
+                return cell
+                
+            case individualDeductibleIndexPath:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Progress", for: indexPath) as! DashboardCollectionViewCell
+                cell.titleLabel.text = "Individual"
+                cell.iconImageView.image = UIImage(named: "expense")
+
+                if let card = idcard{
+                    cell.scoreLabel.text = "Used: $\(String(format:"%.02f", card.individualUsed))"
+                    cell.goalLabel.text = "Total: $\(String(describing: card.deductibleTotal!))"
+                    cell.ringView.ringColor = UIColor("#41D3AC")
+                    cell.ringView.progress = CGFloat(card.individualPercentUsed)
+                }
+                return cell
+            case familyDeductibleIndexPath:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Progress", for: indexPath) as! DashboardCollectionViewCell
+                cell.titleLabel.text = "Family"
+                cell.iconImageView.image = UIImage(named: "expense")
+                if let card = idcard{
+                    cell.scoreLabel.text = "Used: $\(String(format:"%.02f", card.familyUsed))"
+                    cell.goalLabel.text = "Total: $\(String(describing: card.deductibleFamilyTotal!))"
+                    cell.ringView.ringColor = UIColor("#41D3AC")
+                    cell.ringView.progress = CGFloat(card.familyPercentUsed)
+                }
+                return cell
+            default:
+                fatalError()
+            }
+
         default:
             fatalError()
         }
@@ -359,10 +390,8 @@ extension DashboardCollectionViewController: UICollectionViewDelegateFlowLayout 
             switch indexPath.item {
             case 0:
                 return CGSize(width: collectionView.bounds.size.width - 32, height: 52)
-            case 1:
-                return CGSize(width: collectionView.bounds.size.width - 32, height: 172)
             default:
-                return CGSize.zero
+                return CGSize(width: 164, height: 192)
             }
         default:
             return CGSize.zero
@@ -381,6 +410,8 @@ extension DashboardCollectionViewController: UICollectionViewDelegateFlowLayout 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         switch section {
         case 0:
+            return 10
+        case 2:
             return 10
         default:
             return 0

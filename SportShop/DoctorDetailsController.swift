@@ -45,7 +45,7 @@ class DoctorDetailsController: UIViewController {
         
         self.nameText.text = doctor?.name
         self.companyName.text = doctor?.companyName
-        self.titleText.text = doctor?.title
+        self.titleText.text = doctor?.role
         self.addr1.text = doctor?.street
         self.addr2.text = doctor?.addr2
         self.email.text = doctor?.email
@@ -53,17 +53,6 @@ class DoctorDetailsController: UIViewController {
         if let src = doctor?.imageSource {
             let url = URL(string: src)
             self.doctorImage.hnk_setImage(from: url)
-            
-            //            DispatchQueue.global().async {
-            //                let data = try? Data(contentsOf: url!)
-            //
-            //                if let _ = data{
-            //                    DispatchQueue.main.async {
-            //                        self.doctorImage?.image = UIImage(data: data!)
-            //                    }
-            //                }
-            //                
-            //            }
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
