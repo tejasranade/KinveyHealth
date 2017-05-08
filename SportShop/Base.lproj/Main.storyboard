@@ -1440,7 +1440,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nty-1K-izo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nty-1K-izo">
                                 <rect key="frame" x="67" y="182" width="240" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.87064381540000002" green="0.87064381540000002" blue="0.87064381540000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1572,7 +1572,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-1u-K1C" userLabel="HealthConcernImage">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TXS-1u-K1C" userLabel="HealthConcernImage">
                                                     <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="TXS-1u-K1C" secondAttribute="height" multiplier="1:1" id="Xqr-c5-MxS"/>

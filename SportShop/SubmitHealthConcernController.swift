@@ -20,6 +20,10 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var discomfort: UISlider!
     
+    lazy var fileStore: FileStore = {
+        return FileStore.getInstance()
+    }()
+    
     lazy var healthConcernStore:DataStore<HealthConcern> = {
         return DataStore<HealthConcern>.collection(.cache)
     }()
@@ -35,16 +39,39 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     }
 
     @IBAction func submit(_ sender: AnyObject) {
-        let concern = HealthConcern()
-        concern.name = descriptionText.text
-        concern.discomfort = String(Int(discomfort.value))
-        //concern.prevTreated = prevTreated.value
-        if let user = Kinvey.sharedClient.activeUser as? HealthUser {
-            concern.pcpEmail = user.pcp
+        guard let image = imageView.image else {
+            let alert = UIAlertController(title: "Missing Data", message: "Please take a picture of your concern", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                alert.dismiss(animated: true)
+            }))
+            present(alert, animated: true)
+            return
         }
         
-        healthConcernStore.save(concern) { item, error in
-            self.dismiss(animated: true, completion: nil)
+        let file = File()
+        file.publicAccessible = true
+        fileStore.upload(file, image: image) { (result: Result<File, Swift.Error>) in
+            switch result {
+            case .success(let file):
+                let concern = HealthConcern()
+                concern.name = self.descriptionText.text
+                concern.discomfort = String(Int(self.discomfort.value))
+                //concern.prevTreated = prevTreated.value
+                if let user = Kinvey.sharedClient.activeUser as? HealthUser {
+                    concern.pcpEmail = user.pcp
+                }
+                concern.imageSource = file.download
+                
+                self.healthConcernStore.save(concern) { item, error in
+                    self.dismiss(animated: true, completion: nil)
+                }
+            case .failure(let error):
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    alert.dismiss(animated: true)
+                }))
+                self.present(alert, animated: true)
+            }
         }
     }
 

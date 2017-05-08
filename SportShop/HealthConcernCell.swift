@@ -20,6 +20,7 @@ class HealthConcernCell: UITableViewCell {
         name.text = healthConcern?.name
         discomfortLevel.text = healthConcern?.discomfort
         
+        healthConcernImage.image = nil
         if let src = healthConcern?.imageSource {
             self.loadImage(src)
         }
