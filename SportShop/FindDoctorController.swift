@@ -54,19 +54,26 @@ class FindDoctorTableViewController: UITableViewController {
             if let _ = error {
             
             } else {
-                let destinationVC = FindDoctorMapController()
-                destinationVC.doctors = doctors!
-                
                 // Let's assume that the segue name is called playerSegue
                 // This will perform the segue and pre-load the variable for you to use
-                self.performSegue(withIdentifier: "findDoctors", sender: self)
-
+                self.performSegue(withIdentifier: "findDoctors", sender: doctors)
             }
-            
         }
-
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+        case "findDoctors":
+            if let mapVC = segue.destination as? FindDoctorMapController,
+                let doctors = sender as? [Doctor]
+            {
+                mapVC.doctors = doctors
+            }
+        default:
+            break
+        }
+    }
+    
 }
 
 extension FindDoctorTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {

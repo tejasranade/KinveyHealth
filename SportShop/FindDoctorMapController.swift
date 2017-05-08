@@ -16,26 +16,44 @@ class FindDoctorMapController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
  
     let regionRadius: CLLocationDistance = 1000
-    var doctors: [Doctor]?
+    var doctors: [Doctor]!
 
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
-        
-//        let doctor1 = Doctor()
-//        doctor1.name = "Victor"
-//        doctor1.companyName = "Kinvey"
-//        doctor1.location = GeoPoint(latitude: 21.2827, longitude: -157.8294)
-//        doctors.append(doctor1)
-//        
-//        let doctor2 = Doctor()
-//        doctor2.name = "Tejas"
-//        doctor2.companyName = "Kinvey"
-//        doctor2.location = GeoPoint(latitude: 21.285, longitude: -157.825)
-//        doctors.append(doctor2)
-        if let doctors = doctors {
-            mapView.addAnnotations(doctors)
+    func centerMapOnLocation() {
+        let locations = doctors.filter({
+            $0.location != nil
+        }).map({
+            $0.location!
+        })
+        var coordinateRegion: MKCoordinateRegion
+        if locations.count >= 2 {
+            let latitudes = locations.map { $0.latitude }
+            let longitudes = locations.map { $0.longitude }
+            let minLatitude = latitudes.min { $0 < $1 }!
+            let maxLatitude = latitudes.min { $0 > $1 }!
+            let minLongitude = longitudes.min { $0 < $1 }!
+            let maxLongitude = longitudes.min { $0 > $1 }!
+            let diffLatitude = maxLatitude - minLatitude
+            let diffLongitude = maxLongitude - minLongitude
+            let halfDiffLatitude = diffLatitude * 0.5
+            let halfDiffLongitude = diffLongitude * 0.5
+            let centerLatitude = minLatitude + halfDiffLatitude
+            let centerLongitude = minLongitude + halfDiffLongitude
+            let diffLatitudeInMeters = CLLocation(latitude: maxLatitude, longitude: 0).distance(from: CLLocation(latitude: minLatitude, longitude: 0))
+            let diffLongitudeInMeters = CLLocation(latitude: 0, longitude: maxLongitude).distance(from: CLLocation(latitude: 0, longitude: minLongitude))
+            coordinateRegion = MKCoordinateRegionMakeWithDistance(
+                CLLocationCoordinate2D(latitude: centerLatitude, longitude: centerLongitude),
+                diffLatitudeInMeters * 1.1,
+                diffLongitudeInMeters * 1.1
+            )
+        } else {
+            coordinateRegion = MKCoordinateRegionMakeWithDistance(
+                CLLocationCoordinate2D(latitude: 0, longitude: 0),
+                regionRadius * 2.0,
+                regionRadius * 2.0
+            )
         }
+        
+        mapView.addAnnotations(doctors)
         
         mapView.delegate = self
         mapView.setRegion(coordinateRegion, animated: true)
@@ -44,10 +62,7 @@ class FindDoctorMapController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let doctor = doctors?[0],
-            let initialLocation = doctor.location {
-            centerMapOnLocation(location: CLLocation(latitude: initialLocation.latitude, longitude: initialLocation.longitude))
-        }
+        centerMapOnLocation()
     }
 
 }
