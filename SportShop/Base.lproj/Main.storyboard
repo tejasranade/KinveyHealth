@@ -146,17 +146,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibB-FJ-xx7">
-                                <rect key="frame" x="132" y="318" width="110" height="30"/>
-                                <state key="normal" title="Submit Consent"/>
+                                <rect key="frame" x="16" y="307" width="343" height="54"/>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="wcI-Zt-PiC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Submit Consent">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="submitConsent:" destination="yji-nl-Paf" eventType="touchUpInside" id="qqH-Ff-YeV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snv-Yy-QRM">
+                                <rect key="frame" x="16" y="369" width="343" height="54"/>
+                                <color key="backgroundColor" red="0.42745098040000001" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="cF3-nO-sxM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Take a survey">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeSurvey:" destination="yji-nl-Paf" eventType="touchUpInside" id="Yk2-Wa-IQi"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.96078431369999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Snv-Yy-QRM" firstAttribute="leading" secondItem="GrE-9P-QSp" secondAttribute="leadingMargin" id="4zj-H9-qx3"/>
+                            <constraint firstItem="ibB-FJ-xx7" firstAttribute="trailing" secondItem="GrE-9P-QSp" secondAttribute="trailingMargin" id="BZZ-DV-Sdv"/>
                             <constraint firstItem="ibB-FJ-xx7" firstAttribute="centerY" secondItem="GrE-9P-QSp" secondAttribute="centerY" id="CEE-3p-q5d"/>
+                            <constraint firstItem="ibB-FJ-xx7" firstAttribute="leading" secondItem="GrE-9P-QSp" secondAttribute="leadingMargin" id="ZfE-hI-ux0"/>
+                            <constraint firstItem="Snv-Yy-QRM" firstAttribute="trailing" secondItem="GrE-9P-QSp" secondAttribute="trailingMargin" id="kEm-FV-MkC"/>
                             <constraint firstItem="ibB-FJ-xx7" firstAttribute="centerX" secondItem="GrE-9P-QSp" secondAttribute="centerX" id="xNf-Zx-IPC"/>
+                            <constraint firstItem="Snv-Yy-QRM" firstAttribute="top" secondItem="ibB-FJ-xx7" secondAttribute="bottom" constant="8" id="xp3-sx-dSl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zPj-Zg-1gW">
@@ -169,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRX-gf-9VO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="-3592"/>
+            <point key="canvasLocation" x="509.60000000000002" y="-3592.353823088456"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="jtX-zB-JWV">
@@ -1317,7 +1343,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuP-cz-Upe">
                                                     <rect key="frame" x="8" y="8" width="359" height="54"/>
-                                                    <color key="backgroundColor" red="0.42745098039215684" green="0.50588235294117645" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.42745098040000001" green="0.50588235290000005" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="Search">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
