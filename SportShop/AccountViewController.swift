@@ -9,26 +9,17 @@
 import Foundation
 import UIKit
 import Kinvey
-import FBSDKCoreKit
-import FBSDKLoginKit
 
-class AccountViewController: UIViewController, FBSDKLoginButtonDelegate {
+class AccountViewController: UIViewController {
     
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var fbLoginButton: FBSDKLoginButton!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let _ = Kinvey.sharedClient.activeUser {
             self.dismiss(animated: true, completion: nil)
         }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //fbLoginButton.readPermissions = ["", "", ""]
-        //if FBSDKAccessToken.current() == nil,
     }
     
     @IBAction func login(_ sender: Any) {
@@ -42,45 +33,8 @@ class AccountViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
         }
         else {
-            //TODO
             print ("input validation error")
         }
         
-    }
-    
-    @IBAction func continueAsGuest(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        loginButton.readPermissions = ["email"]
-        return true
-    }
-
-    
-     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Swift.Error!) {
-//        if let token = result.token {
-//            //let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"], tokenString: token.tokenString, version: nil, httpMethod: "GET")
-//            User.login(authSource: .facebook, ["access_token": token.tokenString,
-//                                               "appid": token.appID,
-//                                               "email": res["email"]!,
-//                                               "name" : res["name"]!]) { user, error in
-//                                                print ("Logged in to kinvey with fb user")
-//                                                NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
-//                                                self.dismiss(animated: true, completion: nil)
-//            }
-//        }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        Kinvey.sharedClient.activeUser?.logout()
-        NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
-//        FBSDKLoginManager().logOut()
-//        User.login(username: "Guest", password: "kinvey") { user, error in
-//            if let _ = user {
-//                NotificationCenter.default.post(name: Notification.Name("kinveyUserChanged"), object: nil)
-//            }
-//        }
     }
 }
