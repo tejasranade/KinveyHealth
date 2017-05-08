@@ -50,7 +50,7 @@ class Doctor: Entity {
         title <- map["title"]
         companyName <- map["companyName"]
         imageSource <- map["FullPhotoUrl"]
-        location <- map["_geoloc"]
+        location <- ("location", map["_geoloc"])
         PostalCode <- map["PostalCode"]
         city <- map["city"]
         street <- map["street"]
