@@ -11,7 +11,7 @@ import UIKit
 import Kinvey
 import FBSDKLoginKit
 
-class SettingsController: UIViewController {
+class SettingsController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var firstName: UITextField!
@@ -30,6 +30,12 @@ class SettingsController: UIViewController {
         
         
     }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

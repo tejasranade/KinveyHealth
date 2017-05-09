@@ -11,9 +11,9 @@ import UIKit
 import Kinvey
 
 
-class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDelegate{
+class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDelegate, UITextFieldDelegate{
 
-    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var prevTreated: UISwitch!
     
@@ -28,19 +28,23 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
         return DataStore<HealthConcern>.collection(.cache)
     }()
 
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+
     @IBAction func useCamera(_ sender: AnyObject) {
         
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
             
-            self.present(imagePicker, animated: true,
+        self.present(imagePicker, animated: true,
                          completion: nil)
     }
 
     @IBAction func submit(_ sender: AnyObject) {
         guard let image = imageView.image else {
-            let alert = UIAlertController(title: "Missing Data", message: "Please take a picture of your concern", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Missing Data", message: "Add a picture", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 alert.dismiss(animated: true)
             }))

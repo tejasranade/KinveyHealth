@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Kinvey
 
-class ScheduleApptController: UIViewController {
+class ScheduleApptController: UIViewController, UITextFieldDelegate {
     var doctor:Doctor?
     @IBOutlet weak var apptDatePicker: UIDatePicker!
     
@@ -20,6 +20,10 @@ class ScheduleApptController: UIViewController {
         return DataStore<Appointment>.collection(.network)
     }()
 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
     
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true)

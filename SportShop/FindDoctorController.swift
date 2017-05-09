@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Kinvey
 
-class FindDoctorTableViewController: UITableViewController {
+class FindDoctorTableViewController: UITableViewController, UITextFieldDelegate {
     
     lazy var doctorStore:DataStore<Doctor> = {
         return DataStore<Doctor>.collection(.network)
@@ -45,6 +45,10 @@ class FindDoctorTableViewController: UITableViewController {
         
         genderPickerView.delegate = self
         genderTextField.inputView = genderPickerView
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
     
     @IBAction func submit(_ sender: AnyObject) {
