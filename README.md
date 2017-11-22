@@ -1,5 +1,5 @@
-# SportShop
-A retail app built on Kinvey for a Sport Shop
+# KinveyHealth
+A health app built on Kinvey 
 
 ## How to use
 
