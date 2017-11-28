@@ -12,11 +12,12 @@ import ObjectMapper
 import Realm
 
 class Product: Entity {
-    dynamic var name: String?
-    dynamic var shortDesc: String?
-    dynamic var longDesc: String?
-    dynamic var currency: String?
-    dynamic var category: String?
+    
+    @objc dynamic var name: String?
+    @objc dynamic var shortDesc: String?
+    @objc dynamic var longDesc: String?
+    @objc dynamic var currency: String?
+    @objc dynamic var category: String?
     
     var priceString: String {
         if let _ = price {
@@ -26,7 +27,7 @@ class Product: Entity {
         
     }
     var price: Int?
-    dynamic var imageSource: String?
+    @objc dynamic var imageSource: String?
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity

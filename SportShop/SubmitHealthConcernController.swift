@@ -11,7 +11,7 @@ import UIKit
 import Kinvey
 
 
-class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDelegate, UITextFieldDelegate{
+class SubmitHealthConcernController: UIViewController {
 
     @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -27,10 +27,6 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     lazy var healthConcernStore:DataStore<HealthConcern> = {
         return DataStore<HealthConcern>.collection(.cache)
     }()
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textField.resignFirstResponder()
-    }
 
     @IBAction func useCamera(_ sender: AnyObject) {
         
@@ -54,7 +50,7 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
         
         let file = File()
         file.publicAccessible = true
-        fileStore.upload(file, image: image) { (result: Result<File, Swift.Error>) in
+        fileStore.upload(file, image: image, options: nil) { (result: Result<File, Swift.Error>) in
             switch result {
             case .success(let file):
                 let concern = HealthConcern()
@@ -82,6 +78,15 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     @IBAction func cancel(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+
+}
+
+extension SubmitHealthConcernController: UINavigationControllerDelegate {
+    
+}
+
+extension SubmitHealthConcernController: UIImagePickerControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         self.dismiss(animated: true, completion: nil)
@@ -94,5 +99,13 @@ class SubmitHealthConcernController:UIViewController, UIImagePickerControllerDel
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+}
 
+extension SubmitHealthConcernController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
 }

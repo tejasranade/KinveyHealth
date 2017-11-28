@@ -14,18 +14,18 @@ import MapKit
 
 class Doctor: Entity {
     
-    dynamic var name: String?
-    dynamic var role: String?
-    dynamic var companyName: String?
-    dynamic var imageSource: String?
-    dynamic var location: GeoPoint?
-    dynamic var PostalCode: String?
-    dynamic var email: String?
+    @objc dynamic var name: String?
+    @objc dynamic var role: String?
+    @objc dynamic var companyName: String?
+    @objc dynamic var imageSource: String?
+    @objc dynamic var location: GeoPoint?
+    @objc dynamic var PostalCode: String?
+    @objc dynamic var email: String?
     
-    dynamic var city: String?
-    dynamic var street: String?
-    dynamic var zip: String?
-    dynamic var state: String?
+    @objc dynamic var city: String?
+    @objc dynamic var street: String?
+    @objc dynamic var zip: String?
+    @objc dynamic var state: String?
     
     var addr2:String? {
         if let city = city, let state = state, let zip = zip {

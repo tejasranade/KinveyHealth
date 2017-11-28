@@ -85,7 +85,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     }
     
-    func onProfileTapped(_ sender: UITapGestureRecognizer) {
+    @objc func onProfileTapped(_ sender: UITapGestureRecognizer) {
         if let _ = Kinvey.sharedClient.activeUser {
             let settings = self.storyboard?.instantiateViewController(withIdentifier: "SettingsController") as! SettingsController
             present(settings, animated: true, completion: {
@@ -100,7 +100,7 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-    func updateUser(){
+    @objc func updateUser() {
         if let user = Kinvey.sharedClient.activeUser as? HealthUser {
             if let fn = user.firstname {
                 welcomeMsg.text = "Welcome, \(fn)!"

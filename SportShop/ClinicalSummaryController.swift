@@ -61,7 +61,7 @@ class ClinicalSummaryController: UITableViewController {
                 case .failure(_):
                     break
                 }
-                fulfill()
+                fulfill(())
             }
         }
     }
@@ -75,7 +75,7 @@ class ClinicalSummaryController: UITableViewController {
                 case .failure(_):
                     break
                 }
-                fulfill()
+                fulfill(())
             }
         }
     }

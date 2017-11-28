@@ -12,8 +12,8 @@ import ObjectMapper
 
 class Immunization: Entity {
     
-    dynamic var name: String?
-    dynamic var lastAdministered: String?
+    @objc dynamic var name: String?
+    @objc dynamic var lastAdministered: String?
     
     override class func collectionName() -> String {
         //return the name of the backend collection corresponding to this entity

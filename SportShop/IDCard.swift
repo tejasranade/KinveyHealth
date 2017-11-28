@@ -12,24 +12,24 @@ import Realm
 
 class IDCard: Entity {
 
-    dynamic var plan: String?
-    dynamic var provider: String?
+    @objc dynamic var plan: String?
+    @objc dynamic var provider: String?
 
-    dynamic var groupName: String?
-    dynamic var groupNo: String?
-    dynamic var subscriberName: String?
-    dynamic var subscriberNo: String?
+    @objc dynamic var groupName: String?
+    @objc dynamic var groupNo: String?
+    @objc dynamic var subscriberName: String?
+    @objc dynamic var subscriberNo: String?
 
-    dynamic var issueDate: String?
+    @objc dynamic var issueDate: String?
 
-    dynamic var officeCopay: String?
-    dynamic var specialistCopay: String?
+    @objc dynamic var officeCopay: String?
+    @objc dynamic var specialistCopay: String?
     
-    dynamic var deductibleTotal: String?
-    dynamic var deductibleRemain: String?
+    @objc dynamic var deductibleTotal: String?
+    @objc dynamic var deductibleRemain: String?
     
-    dynamic var deductibleFamilyTotal: String?
-    dynamic var deductibleFamilyRemain: String?
+    @objc dynamic var deductibleFamilyTotal: String?
+    @objc dynamic var deductibleFamilyRemain: String?
     
     
     var individualUsed: Float {
